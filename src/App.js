@@ -1,24 +1,69 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+// components
+import NavBar from "./components/NavBar";
+import Headshot from "./components/Headshot";
+import Contacts from "./components/Contacts";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Interests from "./components/Interests";
+
+// MUI
+import {
+  makeStyles,
+  createMuiTheme,
+  ThemeProvider,
+} from "@material-ui/core/styles";
+
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    padding: theme.spacing(1),
+  },
+}));
+
+const theme = createMuiTheme({
+  palette: {
+    type: "dark",
+  },
+});
 
 function App() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ThemeProvider theme={theme}>
+        <NavBar />
+        <div>
+          <Paper square={true} style={{ minHeight: "100vh" }}>
+            <div className={classes.root}>
+              <Typography variant="h2" align="center">
+                Hello Future Employer!
+              </Typography>
+              <Grid
+                container
+                spacing={2}
+                alignContent="center"
+                alignItems="center"
+                justify="center"
+              >
+                <Headshot />
+                <About />
+                <Projects />
+                <Headshot />
+                <Headshot />
+                <Interests />
+                <Contacts />
+                <Headshot />
+              </Grid>
+            </div>
+          </Paper>
+        </div>
+      </ThemeProvider>
     </div>
   );
 }
