@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: 200,
     padding: theme.spacing(2),
+    backgroundColor: "#929292",
   },
   iconsContainer: {
     marginTop: theme.spacing(2),
@@ -41,10 +42,10 @@ function Contacts(props) {
       break;
   }
   return (
-    <Grid item xs={12}>
+    <Grid item xs={12} id="contacts">
       <Paper className={classes.root} elevation={3}>
         <Typography variant="h4" className={classes.title} align="center">
-          Contacts
+          📞 Contact Me
         </Typography>
         <Typography variant="body1" align="center">
           {contactLine}
@@ -57,18 +58,23 @@ function Contacts(props) {
                   <SocialIcon url="http://linkedin.com/in/suel2" />
                 </IconButton>
 
-                <IconButton aria-label="linkedin">
+                <IconButton aria-label="github">
                   <SocialIcon url="https://www.github.com/leesue630/" />
                 </IconButton>
-                <IconButton aria-label="linkedin">
+                <IconButton aria-label="email">
                   <SocialIcon url="mailto:suel2@andrew.cmu.edu" />
                 </IconButton>
               </div>
             )}
             {props.userType === "Friend" && (
-              <IconButton aria-label="linkedin">
-                <SocialIcon url="https://www.instagram.com/sueleel/" />
-              </IconButton>
+              <div>
+                <IconButton aria-label="instagram">
+                  <SocialIcon url="https://www.instagram.com/sueleel/" />
+                </IconButton>
+                <IconButton aria-label="facebook">
+                  <SocialIcon url="https://www.facebook.com/sueleel" />
+                </IconButton>
+              </div>
             )}
           </div>
         </div>

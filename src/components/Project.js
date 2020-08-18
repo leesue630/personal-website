@@ -59,7 +59,7 @@ export default function Project(props) {
         </CardActionArea>
         <CardActions>
           <Button size="small" color="secondary" onClick={handleLearnMore}>
-            Learn More
+            GitHub
           </Button>
         </CardActions>
       </Card>

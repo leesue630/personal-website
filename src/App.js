@@ -20,23 +20,38 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(1),
+    flexGrow: 1,
+  },
+  container: {
+    padding: theme.spacing(3),
   },
   select: {
-    fontSize: theme.typography.h3.fontSize,
+    fontSize: theme.typography.h6.fontSize,
   },
   titleContainer: {
     display: "flex",
+    padding: theme.spacing(3),
   },
   title: {
     margin: "auto",
   },
+  bottom: {
+    padding: theme.spacing(4),
+    background: "linear-gradient(45deg, #FF8E53 30%, #FE6B8B 90%)",
+  },
 }));
 
 const theme = createMuiTheme({
+  palette: {
+    type: "dark",
+  },
+});
+
+const bottomTheme = createMuiTheme({
   palette: {
     type: "dark",
   },
@@ -50,13 +65,31 @@ function App() {
     setUserType(event.target.value);
   }
 
+  var greeting, closing, powerSource;
+  switch (userType) {
+    case "Employer":
+      greeting = <code>System.println("Hello</code>;
+      closing = <code>!👋")</code>;
+      powerSource = "employment";
+      break;
+    case "Friend":
+      greeting = "What's up, ";
+      closing = "!✌";
+      powerSource = "friendship";
+      break;
+    case "FBI":
+      greeting = "Salutations, ";
+      closing = ".😳";
+      powerSource = "FBI-ing";
+  }
+
   return (
-    <div>
+    <div className={classes.root}>
       <ThemeProvider theme={theme}>
         <NavBar userType={userType} />
         <div>
           <Paper square={true} style={{ minHeight: "100vh" }}>
-            <div className={classes.root}>
+            <div className={classes.container}>
               <Grid
                 container
                 spacing={2}
@@ -69,48 +102,62 @@ function App() {
                     <div className={classes.title}>
                       <Typography
                         align="center"
-                        variant="h3"
+                        variant="h5"
                         display="inline"
-                        className={classes.title}
                         gutterBottom={true}
                       >
-                        Hello
+                        {greeting}
                       </Typography>
-                      {"   "}
-                      <Select
-                        labelId="user-type"
-                        id="user-type-select"
-                        value={userType}
-                        onChange={handleUserChange}
-                        style={{ display: "inline-block" }}
-                        className={classes.select}
-                      >
-                        <MenuItem value={"Employer"}>Employer</MenuItem>
-                        <MenuItem value={"Friend"}>Friend</MenuItem>
-                        <MenuItem value={"FBI"}>FBI</MenuItem>
-                      </Select>{" "}
+                      {"  "}
+                      <FormControl>
+                        <Select
+                          labelId="user-type"
+                          id="user-type-select"
+                          value={userType}
+                          onChange={handleUserChange}
+                          className={classes.select}
+                        >
+                          <MenuItem value={"Employer"}>
+                            <code>Employer</code>
+                          </MenuItem>
+                          <MenuItem value={"Friend"}>
+                            <code>Friend</code>
+                          </MenuItem>
+                          <MenuItem value={"FBI"}>
+                            <code>FBI</code>
+                          </MenuItem>
+                        </Select>
+                      </FormControl>
                       <Typography
-                        variant="h3"
+                        variant="h5"
                         display="inline"
-                        className={classes.title}
                         gutterBottom={true}
                       >
-                        !
+                        {closing}
                       </Typography>
                     </div>
                   </div>
                 </Grid>
-                <Headshot userType={userType} />
+                <Headshot userType={userType} height={200} />
                 <About userType={userType} />
                 <Projects userType={userType} />
                 <Headshot userType={userType} />
-                <Headshot userType={userType} />
+                <Headshot userType={userType} height={300} />
                 <Interests userType={userType} />
                 <Contacts userType={userType} />
               </Grid>
             </div>
           </Paper>
         </div>
+        <ThemeProvider theme={bottomTheme}>
+          <Paper square={true} className={classes.bottom}>
+            <Typography variant="body1" align="center">
+              🔧 Built with ReactJs, Material-UI.
+              <br />
+              Powered by your {powerSource}. 💖
+            </Typography>
+          </Paper>
+        </ThemeProvider>
       </ThemeProvider>
     </div>
   );

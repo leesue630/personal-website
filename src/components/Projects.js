@@ -6,11 +6,14 @@ import Project from "./Project";
 
 // MUI
 import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 
 function Projects() {
   return (
-    <Section header="Projects" id="projects">
-      Check out my projects!
+    <Section header="👩‍💻 Projects" id="projects">
+      <Typography variant="body1" align="center">
+        Check out my projects!
+      </Typography>
       <Grid container spacing={1}>
         <Grid item>
           <Project

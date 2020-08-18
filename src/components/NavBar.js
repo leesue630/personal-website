@@ -16,7 +16,9 @@ import Avatar from "@material-ui/core/Avatar";
 
 const useStyles = makeStyles((theme) => ({
   navBar: {
-    boxShadow: "none",
+    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+    color: "white",
+    padding: theme.spacing(1),
   },
   title: {
     flexGrow: 1,
@@ -33,13 +35,12 @@ function NavBar(props) {
     scroll.scrollToTop();
   }
 
-  function scrollToBottom() {
-    scroll.scrollToBottom();
-  }
+  const offset = -85;
+  const duration = 400;
 
   return (
     <div>
-      <AppBar position="sticky" className={classes.navBar} color="transparent">
+      <AppBar position="fixed" color="inherit" className={classes.navBar}>
         <Toolbar>
           <Avatar
             alt="Sue Lee Logo"
@@ -48,49 +49,59 @@ function NavBar(props) {
             onClick={scrollToTop}
           />
           <Typography variant="h4" className={classes.title}>
-            Sue Lee
+            <code>sue lee</code>
           </Typography>
-          <Button color="inherit" className="nav-item">
+          <Button color="inherit">
             <Link
               activeClass="active"
               to="about"
               spy={true}
               smooth={true}
-              offset={-70}
-              duration={500}
+              offset={offset}
+              duration={duration}
             >
               About
             </Link>
           </Button>
-          <Button color="inherit" className="nav-item">
+          <Button color="inherit">
             <Link
               activeClass="active"
               to="projects"
               spy={true}
               smooth={true}
-              offset={-70}
-              duration={500}
+              offset={offset}
+              duration={duration}
             >
               Projects
             </Link>
           </Button>
-          <Button color="inherit" className="nav-item">
+          <Button color="inherit">
             <Link
               activeClass="active"
               to="interests"
               spy={true}
               smooth={true}
-              offset={-70}
-              duration={500}
+              offset={offset}
+              duration={duration}
             >
               Interests
             </Link>
           </Button>
-          <Button color="inherit" className="nav-item" onClick={scrollToBottom}>
-            Contacts
+          <Button color="inherit">
+            <Link
+              activeClass="active"
+              to="contacts"
+              spy={true}
+              smooth={true}
+              offset={offset}
+              duration={duration}
+            >
+              Contacts
+            </Link>
           </Button>
         </Toolbar>
       </AppBar>
+      <Toolbar className={classes.navBar} />
     </div>
   );
 }

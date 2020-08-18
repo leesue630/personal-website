@@ -11,14 +11,18 @@ import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 300,
-  },
-}));
+function useStyles(height) {
+  return makeStyles((theme) => ({
+    root: {
+      maxWidth: 300,
+      maxHeight: height ? height : "none",
+    },
+  }))();
+}
 
 export default function Headshot(props) {
-  const classes = useStyles();
+  const classes = useStyles(props.height);
+
   var image;
   switch (props.userType) {
     case "Employer":

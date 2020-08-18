@@ -13,11 +13,12 @@ import Paper from "@material-ui/core/Paper";
 const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
-    marginBottom: theme.spacing(1),
+    marginBottom: theme.spacing(3),
   },
   root: {
     minHeight: 200,
     padding: theme.spacing(2),
+    backgroundColor: "#d8d8d8",
   },
 }));
 

@@ -20,6 +20,6 @@ div {
   white-space: pre-wrap;
 }
 
-.nav-item > .active {
-  border-bottom: 1px solid #333;
+.active {
+  border-bottom: 2px solid white;
 }
