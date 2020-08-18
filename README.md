@@ -1,1 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# [Sue's Personal Website](http://suelee.netlify.app)
+
+Built with ReactJs, Material-UI.
