@@ -24,8 +24,11 @@ function About(props) {
           I am just your average, law-abiding citizen. Nothing to see here.
           <br />I said thank-you to the bus driver after every ride throughout
           school.
-          <br />I thoroughly enjoy the majestic scenes depicted by "America the
-          Beautiful".
+          <br />I thoroughly enjoy the majestic scenes depicted by{" "}
+          <a href="https://www.purpleheart.org/wp-content/uploads/2018/11/AmericaTheBeautiful.pdf">
+            "America the Beautiful"
+          </a>
+          .
         </div>
       );
       break;
