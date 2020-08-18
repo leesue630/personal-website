@@ -72,15 +72,15 @@ function App() {
       closing = <code>!👋")</code>;
       powerSource = "employment";
       break;
-    case "Friend":
-      greeting = "What's up, ";
-      closing = "!✌";
-      powerSource = "friendship";
-      break;
     case "FBI":
       greeting = "Salutations, ";
       closing = ".😳";
       powerSource = "FBI-ing";
+      break;
+    default:
+      greeting = "What's up, ";
+      closing = "!✌";
+      powerSource = "friendship";
   }
 
   return (

@@ -34,6 +34,7 @@ function Interests(props) {
       interests = [
         { text: "American Pride", icon: americaIcon },
         { text: "American History", icon: americaIcon },
+        { text: "American Flag", icon: americaIcon },
         { text: "American America", icon: americaIcon },
       ];
       break;
@@ -49,7 +50,7 @@ function Interests(props) {
       interests = [
         { text: "Crafting: from sewing to crocheting!", icon: sewingIcon },
         {
-          text: "Guitar-ing: currently learning your favorite song ;)",
+          text: "Novice Guitar-ing: currently learning your favorite song ;)",
           icon: guitarIcon,
         },
         {

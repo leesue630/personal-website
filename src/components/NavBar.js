@@ -2,8 +2,9 @@ import React from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 // assets
-import logo from "../assets/logo.png";
-import americaIcon from "../assets/americaIcon.png";
+import logoEmployer from "../assets/logoEmployer.png";
+import logoFriend from "../assets/logo.png";
+import logoAmerica from "../assets/americaIcon.png";
 
 // MUI
 import { makeStyles } from "@material-ui/core/styles";
@@ -38,13 +39,25 @@ function NavBar(props) {
   const offset = -85;
   const duration = 400;
 
+  var logo;
+  switch (props.userType) {
+    case "Employer":
+      logo = logoEmployer;
+      break;
+    case "FBI":
+      logo = logoAmerica;
+      break;
+    default:
+      logo = logoFriend;
+  }
+
   return (
     <div>
       <AppBar position="fixed" color="inherit" className={classes.navBar}>
         <Toolbar>
           <Avatar
             alt="Sue Lee Logo"
-            src={props.userType === "FBI" ? americaIcon : logo}
+            src={logo}
             className={classes.margin}
             onClick={scrollToTop}
           />

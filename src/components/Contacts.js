@@ -31,15 +31,14 @@ function Contacts(props) {
   const classes = useStyles();
   var contactLine;
   switch (props.userType) {
-    case "Employer":
-      contactLine = "Feel free to reach out any day of the week!";
-      break;
     case "Friend":
       contactLine = "Hit my line, buddy! 🤙";
       break;
     case "FBI":
       contactLine = "Please do not contact me. 🥺";
       break;
+    default:
+      contactLine = "Feel free to reach out any day of the week!";
   }
   return (
     <Grid item xs={12} id="contacts">
