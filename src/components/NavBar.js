@@ -65,7 +65,7 @@ function NavBar(props) {
               to="greeting"
               spy={true}
               smooth={true}
-              offset={offset}
+              offset={offset + 10}
               duration={duration}
             >
               <code>sue lee</code>
