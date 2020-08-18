@@ -32,7 +32,7 @@ function Contacts(props) {
   var contactLine;
   switch (props.userType) {
     case "Friend":
-      contactLine = "Hit my line, buddy! 🤙";
+      contactLine = "Hit my line, buddy!";
       break;
     case "FBI":
       contactLine = "Please do not contact me. 🥺";

@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 
 function Projects() {
   return (
-    <Section header="👩‍💻 Projects" id="projects">
+    <Section header="👩‍💻 My Projects" id="projects">
       <Typography variant="body1" align="center">
         Check out my projects!
       </Typography>

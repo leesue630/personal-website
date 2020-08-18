@@ -11,11 +11,11 @@ function About(props) {
       bio = (
         // eslint-disable-next-line
         <div>
-          But you can call me Sue, cuz we're friends. 😎
+          My name is Sue Lee, but you can call me Sue, cuz we're friends. 😎
           <br />
-          My favorite candy is the Jolly Rancher Crunch N' Chew.
+          My favorite candy is the <b>Jolly Rancher Crunch N' Chew</b>.
           <i>#notspons</i>
-          <br />A dream of mine is to learn how to backflip.
+          <br />A dream of mine is to learn how to <b>backflip</b>.
           <br />I don't drink bubble tea.
         </div>
       );
@@ -39,18 +39,19 @@ function About(props) {
     default:
       bio = (
         <div>
-          I am an <i>aspiring</i> software developer who's excited to contribute
-          to the fast-paced field of computer science.
-          <br />I am currently a{" "}
-          <u>junior studying CS at Carnegie Mellon University</u> while minoring
-          in Human-Computer Interaction and Media Design.
-          <br />I am proficient in <u>C#/Java and HTML/CSS/JavaScript</u>, and
-          can reverse a linked list in O(N) time and O(1) space.{" "}
+          I'm an aspiring software developer, excited to contribute to the
+          fast-paced field of computer science.
+          <br />
+          I'm a <u>junior studying CS at Carnegie Mellon University</u>,
+          minoring in Human-Computer Interaction and Media Design, expecting to
+          graduate in May 2022.
+          <br />I am proficient in <u>C#/Java and HTML/CSS/JavaScript</u> (and
+          can reverse a linked list in O(N) time and O(1) space.)
         </div>
       );
   }
   return (
-    <Section header="My name is Sue Lee." id="about">
+    <Section header="Who am I?" id="about">
       <Typography variant="body1" align="center">
         {bio}
       </Typography>

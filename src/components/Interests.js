@@ -57,7 +57,11 @@ function Interests(props) {
           text: "Group Sports: soccer or any other group exercise is a blast!",
           icon: soccerIcon,
         },
-        { text: "Smiling: default hobby :)", icon: headshotImage },
+        {
+          text:
+            'Smiling: "A smile is a curve that sets everything straight." - Phyllis Diller',
+          icon: headshotImage,
+        },
       ];
   }
 
@@ -73,7 +77,7 @@ function Interests(props) {
   }
 
   return (
-    <Section header="😃 Interests" id="interests">
+    <Section header="😃 My Interests" id="interests">
       <Typography variant="h6" className={classes.title}>
         My interests include:
       </Typography>
