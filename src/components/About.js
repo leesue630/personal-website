@@ -8,12 +8,26 @@ function About(props) {
   var bio;
   switch (props.userType) {
     case "Friend":
-      bio =
-        "But you can call me Sue, cuz we're friends. 😎 My favorite candy is the Jolly Rancher Crunch N' Chew. A dream of mine is to learn how to backflip. I don't drink bubble tea.";
+      bio = (
+        <div>
+          But you can call me Sue, cuz we're friends. 😎
+          <br />
+          My favorite candy is the Jolly Rancher Crunch N' Chew.
+          <br />A dream of mine is to learn how to backflip.
+          <br />I don't drink bubble tea.
+        </div>
+      );
       break;
     case "FBI":
-      bio =
-        'I am just your average, law-abiding citizen. Nothing to see here. I said thank-you to the bus driver after every ride throughout school. I thoroughly enjoy the majestic scenes depicted by "America the Beautiful".';
+      bio = (
+        <div>
+          I am just your average, law-abiding citizen. Nothing to see here.
+          <br />I said thank-you to the bus driver after every ride throughout
+          school.
+          <br />I thoroughly enjoy the majestic scenes depicted by "America the
+          Beautiful".
+        </div>
+      );
       break;
     default:
       bio = (
