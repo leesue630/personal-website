@@ -56,7 +56,10 @@ function NavBar(props) {
     <div>
       <AppBar position="fixed" color="inherit" className={classes.navBar}>
         <Toolbar>
-          <Button color="inherit">
+          <IconButton onClick={scrollToTop}>
+            <Avatar alt="Sue Lee Logo" src={logo} className={classes.margin} />
+          </IconButton>
+          <Typography variant="h4" className={classes.title}>
             <Link
               activeClass="active"
               to="greeting"
@@ -65,17 +68,9 @@ function NavBar(props) {
               offset={offset}
               duration={duration}
             >
-              <Avatar
-                alt="Sue Lee Logo"
-                src={logo}
-                className={classes.margin}
-              />
-              <Typography variant="h4" className={classes.title}>
-                <code>sue lee</code>
-              </Typography>
+              <code>sue lee</code>
             </Link>
-          </Button>
-
+          </Typography>
           <Button color="inherit">
             <Link
               activeClass="active"
