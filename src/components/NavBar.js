@@ -60,7 +60,7 @@ function NavBar(props) {
             <Avatar alt="Sue Lee Logo" src={logo} className={classes.margin} />
             <Link
               activeClass="active"
-              to="greetings"
+              to="greeting"
               spy={true}
               smooth={true}
               offset={offset}
