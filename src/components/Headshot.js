@@ -25,15 +25,14 @@ export default function Headshot(props) {
 
   var image;
   switch (props.userType) {
-    case "Employer":
-      image = headshotImage;
-      break;
     case "Friend":
       image = headshotFriend;
       break;
     case "FBI":
       image = headshotAmericaImage;
       break;
+    default:
+      image = headshotImage;
   }
   return (
     <Grid item>

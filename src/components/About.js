@@ -12,8 +12,9 @@ function About(props) {
         <div>
           But you can call me Sue, cuz we're friends. 😎
           <br />
-          My favorite candy is the Jolly Rancher Crunch N' Chew.
-          <br />A dream of mine is to learn how to backflip.
+          My <i>favorite</i> candy is the Jolly Rancher Crunch N' Chew.
+          #notspons
+          <br />A dream of mine is to learn how to <i>backflip</i>.
           <br />I don't drink bubble tea.
         </div>
       );
@@ -22,13 +23,15 @@ function About(props) {
       bio = (
         <div>
           I am just your average, law-abiding citizen. Nothing to see here.
-          <br />I said thank-you to the bus driver after every ride throughout
-          school.
+          <br />I said thank-you to the bus driver after <u>every ride</u>{" "}
+          throughout school.
           <br />I thoroughly enjoy the majestic scenes depicted by{" "}
           <a href="https://www.purpleheart.org/wp-content/uploads/2018/11/AmericaTheBeautiful.pdf">
             "America the Beautiful"
           </a>
           .
+          <br />I have <u>not</u> been hit by a meteorite and, thus,{" "}
+          <u>do not</u> yet qualify for military experimentation.
         </div>
       );
       break;
