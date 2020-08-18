@@ -43,7 +43,7 @@ function Interests(props) {
         { text: "Full-stack Development", icon: codeIcon },
         { text: "Visual/Interactive Results", icon: codeIcon },
         { text: "Creative or Interdisciplinary Tasks", icon: codeIcon },
-        { text: "Learning About Newly Emerging Tech", icon: codeIcon },
+        { text: "Learning About New Concepts/Tools/Libraries", icon: codeIcon },
       ];
       break;
     default:
