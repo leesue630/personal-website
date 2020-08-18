@@ -1,7 +1,11 @@
 import React from "react";
 
 //MUI
-import { makeStyles } from "@material-ui/core/styles";
+import {
+  makeStyles,
+  createMuiTheme,
+  ThemeProvider,
+} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -17,16 +21,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const theme = createMuiTheme({
+  palette: {
+    type: "light",
+  },
+});
+
 function Section(props) {
   const classes = useStyles();
   return (
-    <Grid item xs={8}>
-      <Paper className={classes.root}>
-        <Typography variant="h4" className={classes.title} align="center">
-          {props.header}
-        </Typography>
-        {props.children}
-      </Paper>
+    <Grid item xs={8} id={props.id}>
+      <ThemeProvider theme={theme}>
+        <Paper className={classes.root}>
+          <Typography variant="h4" className={classes.title} align="center">
+            {props.header}
+          </Typography>
+          {props.children}
+        </Paper>
+      </ThemeProvider>
     </Grid>
   );
 }

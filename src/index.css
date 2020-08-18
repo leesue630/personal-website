@@ -15,3 +15,11 @@ code {
 .App {
   text-align: center;
 }
+
+div {
+  white-space: pre-wrap;
+}
+
+.nav-item > .active {
+  border-bottom: 1px solid #333;
+}

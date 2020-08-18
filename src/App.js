@@ -18,10 +18,21 @@ import {
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(1),
+  },
+  select: {
+    fontSize: theme.typography.h3.fontSize,
+  },
+  titleContainer: {
+    display: "flex",
+  },
+  title: {
+    margin: "auto",
   },
 }));
 
@@ -33,17 +44,19 @@ const theme = createMuiTheme({
 
 function App() {
   const classes = useStyles();
+  const [userType, setUserType] = React.useState("Employer");
+
+  function handleUserChange(event) {
+    setUserType(event.target.value);
+  }
 
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <NavBar />
+        <NavBar userType={userType} />
         <div>
           <Paper square={true} style={{ minHeight: "100vh" }}>
             <div className={classes.root}>
-              <Typography variant="h2" align="center">
-                Hello Future Employer!
-              </Typography>
               <Grid
                 container
                 spacing={2}
@@ -51,14 +64,49 @@ function App() {
                 alignItems="center"
                 justify="center"
               >
-                <Headshot />
-                <About />
-                <Projects />
-                <Headshot />
-                <Headshot />
-                <Interests />
-                <Contacts />
-                <Headshot />
+                <Grid item xs={12}>
+                  <div className={classes.titleContainer}>
+                    <div className={classes.title}>
+                      <Typography
+                        align="center"
+                        variant="h3"
+                        display="inline"
+                        className={classes.title}
+                        gutterBottom={true}
+                      >
+                        Hello
+                      </Typography>
+                      {"   "}
+                      <Select
+                        labelId="user-type"
+                        id="user-type-select"
+                        value={userType}
+                        onChange={handleUserChange}
+                        style={{ display: "inline-block" }}
+                        className={classes.select}
+                      >
+                        <MenuItem value={"Employer"}>Employer</MenuItem>
+                        <MenuItem value={"Friend"}>Friend</MenuItem>
+                        <MenuItem value={"FBI"}>FBI</MenuItem>
+                      </Select>{" "}
+                      <Typography
+                        variant="h3"
+                        display="inline"
+                        className={classes.title}
+                        gutterBottom={true}
+                      >
+                        !
+                      </Typography>
+                    </div>
+                  </div>
+                </Grid>
+                <Headshot userType={userType} />
+                <About userType={userType} />
+                <Projects userType={userType} />
+                <Headshot userType={userType} />
+                <Headshot userType={userType} />
+                <Interests userType={userType} />
+                <Contacts userType={userType} />
               </Grid>
             </div>
           </Paper>

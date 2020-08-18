@@ -2,6 +2,8 @@ import React from "react";
 
 // assets
 import headshotImage from "../assets/headshot.jpeg";
+import headshotAmericaImage from "../assets/headshotAmerica.png";
+import headshotFriend from "../assets/headshotFriend.jpg";
 
 // MUI
 import { makeStyles } from "@material-ui/styles";
@@ -15,16 +17,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Headshot() {
+export default function Headshot(props) {
   const classes = useStyles();
+  var image;
+  switch (props.userType) {
+    case "Employer":
+      image = headshotImage;
+      break;
+    case "Friend":
+      image = headshotFriend;
+      break;
+    case "FBI":
+      image = headshotAmericaImage;
+      break;
+  }
   return (
-    <Grid item xs={4}>
-      <Card className={classes.root}>
+    <Grid item>
+      <Card>
+        <Grid></Grid>
         <CardMedia
           component="img"
           alt="Headshot"
-          image={headshotImage}
+          image={image}
           title="Headshot"
+          className={classes.root}
         />
       </Card>
     </Grid>
