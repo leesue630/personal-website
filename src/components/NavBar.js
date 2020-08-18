@@ -57,7 +57,6 @@ function NavBar(props) {
       <AppBar position="fixed" color="inherit" className={classes.navBar}>
         <Toolbar>
           <Button color="inherit">
-            <Avatar alt="Sue Lee Logo" src={logo} className={classes.margin} />
             <Link
               activeClass="active"
               to="greeting"
@@ -66,6 +65,11 @@ function NavBar(props) {
               offset={offset}
               duration={duration}
             >
+              <Avatar
+                alt="Sue Lee Logo"
+                src={logo}
+                className={classes.margin}
+              />
               <Typography variant="h4" className={classes.title}>
                 <code>sue lee</code>
               </Typography>
