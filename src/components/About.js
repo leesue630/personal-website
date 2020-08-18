@@ -39,7 +39,7 @@ function About(props) {
     default:
       bio = (
         <div>
-          I am an <i>aspiring software developer</i> who's excited to contribute
+          I am an <i>aspiring</i> software developer who's excited to contribute
           to the fast-paced field of computer science.
           <br />I am currently a{" "}
           <u>junior studying CS at Carnegie Mellon University</u> while minoring
