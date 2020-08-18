@@ -9,12 +9,13 @@ function About(props) {
   switch (props.userType) {
     case "Friend":
       bio = (
+        // eslint-disable-next-line
         <div>
           But you can call me Sue, cuz we're friends. 😎
           <br />
-          My <i>favorite</i> candy is the Jolly Rancher Crunch N' Chew.
-          #notspons
-          <br />A dream of mine is to learn how to <i>backflip</i>.
+          My favorite candy is the Jolly Rancher Crunch N' Chew.
+          <i>#notspons</i>
+          <br />A dream of mine is to learn how to backflip.
           <br />I don't drink bubble tea.
         </div>
       );
@@ -30,8 +31,8 @@ function About(props) {
             "America the Beautiful"
           </a>
           .
-          <br />I have <u>not</u> been hit by a meteorite and, thus,{" "}
-          <u>do not</u> yet qualify for military experimentation.
+          <br />I have not been hit by a meteorite and, thus, <u>do not</u> yet
+          qualify for military experimentation.
         </div>
       );
       break;

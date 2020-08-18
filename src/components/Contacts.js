@@ -43,6 +43,7 @@ function Contacts(props) {
   return (
     <Grid item xs={12} id="contacts">
       <Paper className={classes.root} elevation={3}>
+        {/* eslint-disable-next-line */}
         <Typography variant="h4" className={classes.title} align="center">
           📞 Contact Me
         </Typography>

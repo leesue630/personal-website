@@ -69,16 +69,19 @@ function App() {
   switch (userType) {
     case "Employer":
       greeting = <code>System.println("Hello</code>;
+      // eslint-disable-next-line
       closing = <code>!👋")</code>;
       powerSource = "employment";
       break;
     case "FBI":
       greeting = "Salutations, ";
+      // eslint-disable-next-line
       closing = ".😳";
       powerSource = "FBI-ing";
       break;
     default:
       greeting = "What's up, ";
+      // eslint-disable-next-line
       closing = "!✌";
       powerSource = "friendship";
   }
@@ -152,8 +155,10 @@ function App() {
         <ThemeProvider theme={bottomTheme}>
           <Paper square={true} className={classes.bottom}>
             <Typography variant="body1" align="center">
+              {/* eslint-disable-next-line */}
               🔧 Built with ReactJs, Material-UI.
               <br />
+              {/* eslint-disable-next-line */}
               Powered by your {powerSource}. 💖
             </Typography>
           </Paper>
