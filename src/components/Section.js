@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     minHeight: 200,
-    padding: theme.spacing(2),
+    padding: theme.spacing(2, 4),
     backgroundColor: "#d8d8d8",
   },
 }));
