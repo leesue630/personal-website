@@ -64,7 +64,16 @@ function NavBar(props) {
             className={classes.title}
             onClick={scrollToTop}
           >
-            <code>sue lee</code>
+            <Link
+              activeClass="active"
+              to="greetings"
+              spy={true}
+              smooth={true}
+              offset={offset}
+              duration={duration}
+            >
+              <code>sue lee</code>
+            </Link>
           </Typography>
           <Button color="inherit">
             <Link

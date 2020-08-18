@@ -100,7 +100,7 @@ function App() {
                 alignItems="center"
                 justify="center"
               >
-                <Grid item xs={12}>
+                <Grid item xs={12} id="greeting">
                   <div className={classes.titleContainer}>
                     <div className={classes.title}>
                       <Typography
