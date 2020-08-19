@@ -19,7 +19,7 @@ function Projects() {
           <Project
             name="Fruitful"
             image={fruitful}
-            description="🍊 Social media web app fro individuals passionate about fruit."
+            description="🍊 Social media web app for individuals passionate about fruit."
             website="http://fruitful-convos.web.app"
             github="https://github.com/leesue630/fruitful"
           />
