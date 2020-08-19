@@ -31,7 +31,7 @@ const theme = createMuiTheme({
 function Section(props) {
   const classes = useStyles();
   return (
-    <Grid item xs={8} id={props.id}>
+    <Grid item xs={12} sm={8} id={props.id}>
       <ThemeProvider theme={theme}>
         <Paper className={classes.root}>
           <Typography variant="h4" className={classes.title} align="center">

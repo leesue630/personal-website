@@ -113,7 +113,7 @@ function NavBar(props) {
               to="contacts"
               spy={true}
               smooth={true}
-              offset={-340}
+              offset={offset}
               duration={duration}
             >
               Contacts
