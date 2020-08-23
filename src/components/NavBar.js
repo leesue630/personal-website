@@ -56,8 +56,8 @@ function NavBar(props) {
     <div>
       <AppBar position="fixed" color="inherit" className={classes.navBar}>
         <Toolbar>
-          <IconButton onClick={scrollToTop}>
-            <Avatar alt="Sue Lee Logo" src={logo} className={classes.margin} />
+          <IconButton onClick={scrollToTop} className={classes.margin} >
+            <Avatar alt="Sue Lee Logo" src={logo}/>
           </IconButton>
           <Typography variant="h4" className={classes.title}>
             <Link
