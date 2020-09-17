@@ -15,10 +15,12 @@ import Button from "@material-ui/core/Button";
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: theme.spacing(2),
-    maxWidth: 345,
+    // minHeight: 320,
+    width: 345,
   },
   media: {
-    height: 140,
+    height: 0,
+    paddingTop: "56.25%", // 16:9
   },
 }));
 
@@ -36,7 +38,7 @@ export default function Project(props) {
   }
 
   function handleLearnMore() {
-    window.location.href = props.github;
+    window.location.href = !!props.github ? props.github : props.website;
   }
 
   return (
@@ -58,9 +60,15 @@ export default function Project(props) {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="secondary" onClick={handleLearnMore}>
-            GitHub
-          </Button>
+          {!!props.github ? (
+            <Button size="small" color="secondary" onClick={handleLearnMore}>
+              GitHub
+            </Button>
+          ) : (
+            <Button size="small" color="secondary" onClick={handleLearnMore}>
+              Website
+            </Button>
+          )}
         </CardActions>
       </Card>
     </ThemeProvider>
