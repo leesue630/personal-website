@@ -1,10 +1,15 @@
 import React from "react";
+
+// components
 import Section from "./Section";
+import Project from "./Project";
+
+// assets
 import fruitful from "../assets/fruitful.png";
+import pollysOh from "../assets/pollys-oh.png";
 import concertprep from "../assets/concertprep.png";
 import treesite from "../assets/treesite.png";
 import scootersignals from "../assets/scootersignals.jpg";
-import Project from "./Project";
 
 // MUI
 import Typography from "@material-ui/core/Typography";
@@ -33,6 +38,13 @@ function Projects() {
         "🍊 Social media web app for individuals passionate about fruit.",
       website: "http://fruitful-convos.web.app",
       github: "https://github.com/leesue630/fruitful",
+    },
+    {
+      name: "Polly's OH",
+      image: pollysOh,
+      description: "🦜 A parody of cmu.ohqueue featuring TA Polly.",
+      website: "https://pollys-ohqueue.netlify.app",
+      github: "https://github.com/leesue630/pollys-oh",
     },
     {
       name: "ConcertPrep",
