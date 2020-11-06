@@ -42,7 +42,8 @@ function Projects() {
     {
       name: "Polly's OH",
       image: pollysOh,
-      description: "🦜 A parody of cmu.ohqueue featuring TA Polly.",
+      description:
+        "🦜 A parody of cmu.ohqueue inspired by the Rubber Duck Debugging method.",
       website: "https://pollys-ohqueue.netlify.app",
       github: "https://github.com/leesue630/pollys-oh",
     },
