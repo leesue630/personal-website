@@ -49,7 +49,7 @@ function Suewitter(props) {
 
   function handleLoadMore(e) {
     e.preventDefault();
-    setDisplayCount(Math.max(displayCount + 5, sueweets.length));
+    setDisplayCount(Math.min(displayCount + 5, sueweets.length));
   }
 
   function postSueweet(newSueweet) {
