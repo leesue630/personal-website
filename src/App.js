@@ -7,6 +7,7 @@ import Contacts from "./components/Contacts";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Interests from "./components/Interests";
+import Suewitter from "./components/Suewitter";
 
 // MUI
 import {
@@ -147,6 +148,7 @@ function App() {
                 <Headshot userType={userType} />
                 <Headshot userType={userType} height={300} />
                 <Interests userType={userType} />
+                <Suewitter />
                 <Contacts userType={userType} />
               </Grid>
             </div>
