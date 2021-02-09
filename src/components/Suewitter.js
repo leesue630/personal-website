@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Suewitter() {
+function Suewitter(props) {
   const [sueweets, setSueweets] = React.useState([]);
   const [displayCount, setDisplayCount] = React.useState(3);
 
@@ -80,7 +80,11 @@ function Suewitter() {
       <List className={classes.root}>
         {sueweets.slice(0, displayCount).map((sueweet, id) => (
           <span>
-            <Sueweet text={sueweet.text} created_at={sueweet.created_at} />
+            <Sueweet
+              text={sueweet.text}
+              created_at={sueweet.created_at}
+              userType={props.userType}
+            />
             {id < sueweets.length - 1 && (
               <Divider variant="inset" component="li" />
             )}
@@ -96,7 +100,7 @@ function Suewitter() {
           </ListItem>
         )}
       </List>
-      <SendSueweet postSueweet={postSueweet} />
+      <SendSueweet postSueweet={postSueweet} userType={props.userType} />
     </Section>
   );
 }

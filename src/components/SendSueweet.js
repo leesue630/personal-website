@@ -11,6 +11,8 @@ import SendIcon from "@material-ui/icons/Send";
 
 // assets
 import headshotImage from "../assets/headshot.jpeg";
+import headshotAmericaImage from "../assets/headshotAmerica.png";
+import headshotFriend from "../assets/headshotFriend.jpg";
 
 function SendSueweet(props) {
   const [newSueweet, setNewSueweet] = React.useState("");
@@ -51,10 +53,22 @@ function SendSueweet(props) {
     resetChecks();
   }
 
+  var image;
+  switch (props.userType) {
+    case "Friend":
+      image = headshotFriend;
+      break;
+    case "FBI":
+      image = headshotAmericaImage;
+      break;
+    default:
+      image = headshotImage;
+  }
+
   return (
     <Grid container spacing={2} alignItems="flex-end">
       <Grid item>
-        <Avatar alt="Sue Lee Headshot" src={headshotImage} />
+        <Avatar alt="Sue Lee Headshot" src={image} />
       </Grid>
       <Grid item xs={6}>
         <TextField
@@ -82,7 +96,7 @@ function SendSueweet(props) {
           />
         </Grid>
       )}
-      {checkStates.isSue && (
+      {newSueweet !== "" && checkStates.isSue && (
         <Grid item>
           <FormControlLabel
             control={
@@ -97,7 +111,7 @@ function SendSueweet(props) {
           />
         </Grid>
       )}
-      {checkStates.pinkyPromise && (
+      {newSueweet !== "" && checkStates.pinkyPromise && (
         <Grid item>
           <FormControlLabel
             control={
@@ -116,7 +130,10 @@ function SendSueweet(props) {
         <Button
           variant="contained"
           color="primary"
-          disabled={!Object.values(checkStates).reduce((a, b) => a && b)}
+          disabled={
+            newSueweet === "" ||
+            !Object.values(checkStates).reduce((a, b) => a && b)
+          }
           endIcon={<SendIcon />}
           onClick={handlePostSueweet}
         >

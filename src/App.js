@@ -148,7 +148,7 @@ function App() {
                 <Headshot userType={userType} />
                 <Headshot userType={userType} height={300} />
                 <Interests userType={userType} />
-                <Suewitter />
+                <Suewitter userType={userType} />
                 <Contacts userType={userType} />
               </Grid>
             </div>

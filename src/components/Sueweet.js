@@ -9,6 +9,8 @@ import Typography from "@material-ui/core/Typography";
 
 // assets
 import headshotImage from "../assets/headshot.jpeg";
+import headshotAmericaImage from "../assets/headshotAmerica.png";
+import headshotFriend from "../assets/headshotFriend.jpg";
 
 // packages
 import DayJs from "dayjs";
@@ -17,13 +19,23 @@ import RelativeTime from "dayjs/plugin/relativeTime";
 function Sueweet(props) {
   DayJs.extend(RelativeTime);
 
-  //   const classes = useStyles();
+  var image;
+  switch (props.userType) {
+    case "Friend":
+      image = headshotFriend;
+      break;
+    case "FBI":
+      image = headshotAmericaImage;
+      break;
+    default:
+      image = headshotImage;
+  }
 
   return (
     <div>
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Sue Lee Headshot" src={headshotImage} />
+          <Avatar alt="Sue Lee Headshot" src={image} />
         </ListItemAvatar>
         <ListItemText
           primary={props.text}
