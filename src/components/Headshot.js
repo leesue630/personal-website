@@ -10,6 +10,7 @@ import { makeStyles } from "@material-ui/styles";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
 
 function useStyles(height) {
   return makeStyles((theme) => ({
@@ -34,10 +35,16 @@ export default function Headshot(props) {
     default:
       image = headshotImage;
   }
+
+  var display = {
+    xs: props.mobile ? "block" : "none",
+    sm: props.mobile ? "block" : "none",
+    md: props.desktop ? "block" : "none",
+  };
   return (
-    <Grid item>
-      <Card>
-        <Grid></Grid>
+    <Grid item component={Box} display={display}>
+      <Card display="none">
+        {/* <Grid></Grid> */}
         <CardMedia
           component="img"
           alt="Headshot"

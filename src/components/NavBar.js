@@ -15,6 +15,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import AppBar from "@material-ui/core/AppBar";
 import Avatar from "@material-ui/core/Avatar";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
   navBar: {
@@ -56,21 +57,23 @@ function NavBar(props) {
     <div>
       <AppBar position="fixed" color="inherit" className={classes.navBar}>
         <Toolbar>
-          <IconButton onClick={scrollToTop} className={classes.margin} >
-            <Avatar alt="Sue Lee Logo" src={logo}/>
+          <IconButton onClick={scrollToTop} className={classes.margin}>
+            <Avatar alt="Sue Lee Logo" src={logo} />
           </IconButton>
-          <Typography variant="h4" className={classes.title}>
-            <Link
-              activeClass="active"
-              to="greeting"
-              spy={true}
-              smooth={true}
-              offset={offset - 20}
-              duration={duration}
-            >
-              <code>sue lee</code>
-            </Link>
-          </Typography>
+          <Box component="span" className={classes.title} display={{ xs: "none", sm: "inline" }}>
+            <Typography variant="h4" >
+              <Link
+                activeClass="active"
+                to="greeting"
+                spy={true}
+                smooth={true}
+                offset={offset - 20}
+                duration={duration}
+              >
+                <code>sue lee</code>
+              </Link>
+            </Typography>
+          </Box>
           <Button color="inherit">
             <Link
               activeClass="active"
@@ -80,7 +83,8 @@ function NavBar(props) {
               offset={offset}
               duration={duration}
             >
-              About
+              <Box display={{ xs: "none", sm: "inline" }}>About</Box>
+              <Box display={{ xs: "inline", sm: "none" }}>❓</Box>
             </Link>
           </Button>
           <Button color="inherit">
@@ -92,7 +96,12 @@ function NavBar(props) {
               offset={offset}
               duration={duration}
             >
-              Projects
+              <Box component="span" display={{ xs: "none", sm: "inline" }}>
+                Projects
+              </Box>
+              <Box component="span" display={{ xs: "inline", sm: "none" }}>
+                👩‍💻
+              </Box>
             </Link>
           </Button>
           <Button color="inherit">
@@ -104,7 +113,12 @@ function NavBar(props) {
               offset={offset}
               duration={duration}
             >
-              Interests
+              <Box component="span" display={{ xs: "none", sm: "inline" }}>
+                Interests
+              </Box>
+              <Box component="span" display={{ xs: "inline", sm: "none" }}>
+                😃
+              </Box>
             </Link>
           </Button>
           <Button color="inherit">
@@ -116,7 +130,12 @@ function NavBar(props) {
               offset={offset}
               duration={duration}
             >
-              Contacts
+              <Box component="span" display={{ xs: "none", sm: "flex" }}>
+                Contacts
+              </Box>
+              <Box component="span" display={{ xs: "inline", sm: "none" }}>
+                📞
+              </Box>
             </Link>
           </Button>
         </Toolbar>

@@ -38,7 +38,7 @@ function About(props) {
       break;
     default:
       bio = (
-        <div>
+        <span>
           I'm an aspiring software developer, excited to contribute to the
           fast-paced field of computer science.
           <br />
@@ -47,7 +47,7 @@ function About(props) {
           graduate in May 2022.
           <br />I am proficient in <u>C#/Java and HTML/CSS/JavaScript</u> (and
           can reverse a linked list in O(N) time and O(1) space.)
-        </div>
+        </span>
       );
   }
   return (

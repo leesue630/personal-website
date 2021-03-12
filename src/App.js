@@ -142,11 +142,12 @@ function App() {
                     </div>
                   </div>
                 </Grid>
-                <Headshot userType={userType} height={200} />
+                <Headshot userType={userType} height={200} desktop/>
+                <Headshot userType={userType} height={300} mobile/>
                 <About userType={userType} />
                 <Projects userType={userType} />
-                <Headshot userType={userType} />
-                <Headshot userType={userType} height={300} />
+                <Headshot userType={userType} desktop mobile/>
+                <Headshot userType={userType} height={300} desktop/>
                 <Interests userType={userType} />
                 <Suewitter userType={userType} />
                 <Contacts userType={userType} />

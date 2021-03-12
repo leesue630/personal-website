@@ -79,14 +79,15 @@ function Suewitter(props) {
     <Section header="🐥 Suewitter" id="suewitter">
       <List className={classes.root}>
         {sueweets.slice(0, displayCount).map((sueweet, id) => (
-          <span>
+          <span key={"sueweetSpan" + id}>
             <Sueweet
               text={sueweet.text}
               created_at={sueweet.created_at}
               userType={props.userType}
+              key={"sueweet" + id}
             />
             {id < sueweets.length - 1 && (
-              <Divider variant="inset" component="li" />
+              <Divider variant="inset" component="li" key={"divider" + id}/>
             )}
           </span>
         ))}

@@ -80,9 +80,10 @@ function Projects() {
       </Typography>
       <section className={classes.root}>
         {tileData.map((tile) => (
-          <div className={classes.tile}>
+          <div className={classes.tile} key={tile.name}>
             <Project
               name={tile.name}
+              key={tile.name}
               image={tile.image}
               description={tile.description}
               website={tile.website}

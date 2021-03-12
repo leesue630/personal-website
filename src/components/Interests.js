@@ -66,12 +66,12 @@ function Interests(props) {
   }
 
   function generateListItems(items) {
-    return items.map((item) => (
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar src={item.icon} />
+    return items.map((item, idx) => (
+      <ListItem key={"listItem" + idx}>
+        <ListItemAvatar key={"listItemAvatar" + idx}>
+          <Avatar src={item.icon}  key={"avatar" + idx}/>
         </ListItemAvatar>
-        <ListItemText primary={item.text} />
+        <ListItemText primary={item.text}  key={"listItemText" + idx}/>
       </ListItem>
     ));
   }
