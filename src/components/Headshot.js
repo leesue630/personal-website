@@ -2,7 +2,7 @@ import React from "react";
 
 // assets
 import headshotImage from "../assets/headshot.jpeg";
-import headshotAmericaImage from "../assets/headshotAmerica.png";
+import headshotAmericaImage from "../assets/headshotAmerica.jpg";
 import headshotFriend from "../assets/headshotFriend.jpg";
 
 // MUI
