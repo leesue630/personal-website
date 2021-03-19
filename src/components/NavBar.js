@@ -71,7 +71,10 @@ function NavBar(props) {
                 duration={duration}
               >
                 <Box display={{ xs: "none", sm: "inline" }}>
-                  <code>sue lee</code>
+                  <code>sue;lee</code>
+                </Box>
+                <Box display={{ xs: "inline", sm: "none" }}>
+                  <code>s;l</code>
                 </Box>
               </Link>
             </Typography>
