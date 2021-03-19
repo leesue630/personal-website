@@ -17,40 +17,60 @@ import headshotFriend from "../assets/headshotFriend.jpg";
 function SendSueweet(props) {
   const [newSueweet, setNewSueweet] = React.useState("");
   const [error, setError] = React.useState(false);
-  const [checkStates, setCheckStates] = React.useState({
-    isSue: false,
-    pinkyPromise: false,
-    idNeverLie: false,
-  });
+  const [currCheckLevel, setCurrCheckLevel] = React.useState(0);
+  const checkboxContent = [
+    "I am Sue.",
+    "I pinky promise!",
+    "I can't tell a lie.",
+    "One more to cross-check with Sue's checkbox checking...🔀",
+    "96% similarity detected!✅ But...",
+    "...one can never be too careful these days...👀",
+    "Would the real Sue have lasted this long?😬",
+    "That's true. She's well-known for her determination and endurance.😤",
+    "Would the real Sue be clicking checkboxes at this incredible pace?😳",
+    "You're right. A little bit of text is no match for her lightning-fast reading comprehension.⚡",
+    "Wait, but wouldn't Sue have better things to do right now than to be complimenting herself on her personal website?🤔",
+    "Ah I see. She probably found a second to spare, in between selflessly spreading positivity and performing noble acts of kindness.🤩",
+    "The galaxy awaits! Let's get this sueweet uploaded so you can keep up the great work!🛸",
+  ];
+
+  const [checkStates, setCheckStates] = React.useState(
+    Array(checkboxContent.length).fill(false)
+  );
+
+  const checkLevelCount = checkboxContent.length;
 
   function handleNewSueweet(e) {
     setNewSueweet(e.target.value);
   }
 
-  function handleCheck(e) {
-    setCheckStates({ ...checkStates, [e.target.name]: e.target.checked });
-  }
-
-  function resetChecks() {
-    setCheckStates({
-      isSue: false,
-      pinkyPromise: false,
-      idNeverLie: false,
-    });
-  }
+  const handleCheck = (idx) => (e) => {
+    if (e.target.checked) {
+      setCurrCheckLevel(idx + 1);
+      let newCheckStates = [...checkStates];
+      newCheckStates[idx] = true;
+      setCheckStates(newCheckStates);
+    } else {
+      setCurrCheckLevel(idx);
+      setCheckStates(checkStates.map((b, i) => (i >= idx ? false : b)));
+    }
+  };
 
   function handlePostSueweet() {
     props
       .postSueweet(newSueweet)
       .then(() => {
         setNewSueweet("");
-        console.log("enter here");
+        // console.log("enter here");
       })
       .catch(() => {
         setError(true);
       });
-
     resetChecks();
+  }
+
+  function resetChecks() {
+    setCheckStates(checkStates.map((_) => false));
   }
 
   var image;
@@ -64,6 +84,32 @@ function SendSueweet(props) {
     default:
       image = headshotImage;
   }
+
+  const checkStateByIdx = (idx) => {
+    return newSueweet !== "" && currCheckLevel >= idx;
+  };
+
+  const SueweetCheckbox = (label, idx) => {
+    return (
+      checkStateByIdx(idx) && (
+        <Grid item key={`gridItemCheckbox${idx}`}>
+          <FormControlLabel
+            key={`formCLCheckbox${idx}`}
+            control={
+              <Checkbox
+                checked={checkStates[idx]}
+                onChange={handleCheck(idx)}
+                name={`checkbox${idx}`}
+                key={`checkbox${idx}`}
+                color={idx % 2 === 0 ? "primary" : "secondary"}
+              />
+            }
+            label={label}
+          />
+        </Grid>
+      )
+    );
+  };
 
   return (
     <Grid container spacing={2} alignItems="flex-end">
@@ -81,59 +127,12 @@ function SendSueweet(props) {
           helperText={error ? "Something went wrong..." : ""}
         />
       </Grid>
-      {newSueweet !== "" && (
-        <Grid item>
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={checkStates.isSue}
-                onChange={handleCheck}
-                name="isSue"
-                color="primary"
-              />
-            }
-            label="I am Sue"
-          />
-        </Grid>
-      )}
-      {newSueweet !== "" && checkStates.isSue && (
-        <Grid item>
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={checkStates.pinkyPromise}
-                onChange={handleCheck}
-                name="pinkyPromise"
-                color="secondary"
-              />
-            }
-            label="I pinky promise!"
-          />
-        </Grid>
-      )}
-      {newSueweet !== "" && checkStates.pinkyPromise && (
-        <Grid item>
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={checkStates.idNeverLie}
-                onChange={handleCheck}
-                name="idNeverLie"
-                color="primary"
-              />
-            }
-            label="I can't tell a lie."
-          />
-        </Grid>
-      )}
+      {checkboxContent.map((label, idx) => SueweetCheckbox(label, idx))}
       <Grid item>
         <Button
           variant="contained"
           color="primary"
-          disabled={
-            newSueweet === "" ||
-            !Object.values(checkStates).reduce((a, b) => a && b)
-          }
+          disabled={!checkStateByIdx(checkLevelCount)}
           endIcon={<SendIcon />}
           onClick={handlePostSueweet}
         >

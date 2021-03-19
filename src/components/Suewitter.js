@@ -52,6 +52,11 @@ function Suewitter(props) {
     setDisplayCount(Math.min(displayCount + 3, sueweets.length));
   }
 
+  function handleSeeLess(e) {
+    e.preventDefault();
+    setDisplayCount(3);
+  }
+
   function postSueweet(newSueweet) {
     return new Promise((resolve, reject) => {
       axios
@@ -75,6 +80,32 @@ function Suewitter(props) {
 
   const classes = useStyles();
 
+  var displayCountControl;
+
+  if (sueweets.length > displayCount) {
+    displayCountControl = (
+      <ListItem alignItems="flex-start">
+        <Typography component="span" variant="body2" color="textPrimary">
+          <Link href="#" onClick={handleLoadMore}>
+            Load more...
+          </Link>
+        </Typography>
+      </ListItem>
+    );
+  } else if (displayCount > 3) {
+    displayCountControl = (
+      <ListItem alignItems="flex-start">
+        <Typography component="span" variant="body2" color="textPrimary">
+          <Link href="#" onClick={handleSeeLess}>
+            See less...
+          </Link>
+        </Typography>
+      </ListItem>
+    );
+  } else {
+    displayCountControl = "";
+  }
+
   return (
     <Section header="🐥 Suewitter" id="suewitter">
       <List className={classes.root}>
@@ -87,19 +118,11 @@ function Suewitter(props) {
               key={"sueweet" + id}
             />
             {id < sueweets.length - 1 && (
-              <Divider variant="inset" component="li" key={"divider" + id}/>
+              <Divider variant="inset" component="li" key={"divider" + id} />
             )}
           </span>
         ))}
-        {sueweets.length > displayCount && (
-          <ListItem alignItems="flex-start">
-            <Typography component="span" variant="body2" color="textPrimary">
-              <Link href="#" onClick={handleLoadMore}>
-                Load more...
-              </Link>
-            </Typography>
-          </ListItem>
-        )}
+        {displayCountControl}
       </List>
       <SendSueweet postSueweet={postSueweet} userType={props.userType} />
     </Section>
