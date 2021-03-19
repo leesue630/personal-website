@@ -60,8 +60,8 @@ function NavBar(props) {
           <IconButton onClick={scrollToTop} className={classes.margin}>
             <Avatar alt="Sue Lee Logo" src={logo} />
           </IconButton>
-          <Box component="span" className={classes.title} display={{ xs: "none", sm: "inline" }}>
-            <Typography variant="h4" >
+          <span className={classes.title}>
+            <Typography variant="h4">
               <Link
                 activeClass="active"
                 to="greeting"
@@ -70,10 +70,12 @@ function NavBar(props) {
                 offset={offset - 20}
                 duration={duration}
               >
-                <code>sue lee</code>
+                <Box display={{ xs: "none", sm: "inline" }}>
+                  <code>sue lee</code>
+                </Box>
               </Link>
             </Typography>
-          </Box>
+          </span>
           <Button color="inherit">
             <Link
               activeClass="active"

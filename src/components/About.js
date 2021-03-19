@@ -3,6 +3,7 @@ import Section from "./Section";
 
 // MUI
 import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
 
 function About(props) {
   var bio;
@@ -39,22 +40,25 @@ function About(props) {
     default:
       bio = (
         <span>
-          I'm an aspiring software developer, excited to contribute to the
-          fast-paced field of computer science.
+          I'm an <b>aspiring software developer</b>👩‍💻, excited to contribute to
+          the fast-paced field of computer science.
           <br />
-          I'm a <u>junior studying CS at Carnegie Mellon University</u>,
-          minoring in Human-Computer Interaction and Media Design, expecting to
-          graduate in May 2022.
-          <br />I am proficient in <u>C#/Java and HTML/CSS/JavaScript</u> (and
-          can reverse a linked list in O(N) time and O(1) space.)
+          <br />
+          I'm a <b>junior studying CS at Carnegie Mellon</b>🐶, minoring in
+          Human-Computer Interaction, and expecting to graduate in May 2022.🎓
+          <br />
+          <br />I am proficient in <b>C#/Java and HTML/CSS/JavaScript</b> (and
+          can reverse a linked list in O(1) space).😉
         </span>
       );
   }
   return (
     <Section header="Who am I?" id="about">
-      <Typography variant="body1" align="center">
-        {bio}
-      </Typography>
+      <Container maxWidth="xs">
+        <Typography variant="body1" align="center">
+          {bio}
+        </Typography>
+      </Container>
     </Section>
   );
 }

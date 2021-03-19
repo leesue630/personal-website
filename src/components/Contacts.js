@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 200,
     padding: theme.spacing(2),
     backgroundColor: "#929292",
+    // flex: '1 0 auto',
   },
   iconsContainer: {
     marginTop: theme.spacing(2),

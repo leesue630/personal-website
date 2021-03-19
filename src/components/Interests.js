@@ -21,7 +21,7 @@ import Avatar from "@material-ui/core/Avatar";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    maxWidth: 752,
+    // maxWidth: 752,
   },
 }));
 
@@ -78,7 +78,7 @@ function Interests(props) {
 
   return (
     <Section header="😃 My Interests" id="interests">
-      <Typography variant="h6" className={classes.title}>
+      <Typography variant="h6" className={classes.root}>
         My interests include:
       </Typography>
       <List dense={true}>{generateListItems(interests)}</List>

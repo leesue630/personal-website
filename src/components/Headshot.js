@@ -44,7 +44,6 @@ export default function Headshot(props) {
   return (
     <Grid item component={Box} display={display}>
       <Card display="none">
-        {/* <Grid></Grid> */}
         <CardMedia
           component="img"
           alt="Headshot"

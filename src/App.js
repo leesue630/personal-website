@@ -8,6 +8,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Interests from "./components/Interests";
 import Suewitter from "./components/Suewitter";
+import Links from "./components/Links";
 
 // MUI
 import {
@@ -22,6 +23,8 @@ import Typography from "@material-ui/core/Typography";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
+import Container from "@material-ui/core/Container";
+import withWidth from "@material-ui/core/withWidth";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     padding: theme.spacing(3),
+    maxWidth: 1150
   },
   select: {
     fontSize: theme.typography.h6.fontSize,
@@ -58,7 +62,7 @@ const bottomTheme = createMuiTheme({
   },
 });
 
-function App() {
+function App(props) {
   const classes = useStyles();
   const [userType, setUserType] = React.useState("Employer");
 
@@ -93,15 +97,16 @@ function App() {
         <NavBar userType={userType} />
         <div>
           <Paper square={true} style={{ minHeight: "100vh" }}>
-            <div className={classes.container}>
+            <Container fixed className={classes.container}>
               <Grid
                 container
-                spacing={2}
+                spacing={3}
+                direction="row"
                 alignContent="center"
                 alignItems="center"
                 justify="center"
               >
-                <Grid item xs={12} id="greeting">
+                <Grid id="selectVisitorTypeGridItem" item xs={12} id="greeting">
                   <div className={classes.titleContainer}>
                     <div className={classes.title}>
                       <Typography
@@ -142,17 +147,18 @@ function App() {
                     </div>
                   </div>
                 </Grid>
-                <Headshot userType={userType} height={200} desktop/>
-                <Headshot userType={userType} height={300} mobile/>
+                <Headshot userType={userType} height={200} desktop />
+                <Headshot userType={userType} height={300} mobile />
                 <About userType={userType} />
                 <Projects userType={userType} />
-                <Headshot userType={userType} desktop mobile/>
-                <Headshot userType={userType} height={300} desktop/>
+                <Headshot userType={userType} desktop mobile />
+                <Headshot userType={userType} height={300} desktop />
                 <Interests userType={userType} />
                 <Suewitter userType={userType} />
+                {/* <Links userType={userType} /> */}
                 <Contacts userType={userType} />
               </Grid>
-            </div>
+            </Container>
           </Paper>
         </div>
         <ThemeProvider theme={bottomTheme}>
@@ -171,4 +177,4 @@ function App() {
   );
 }
 
-export default App;
+export default withWidth()(App);
