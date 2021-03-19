@@ -24,7 +24,6 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Container from "@material-ui/core/Container";
-import withWidth from "@material-ui/core/withWidth";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -106,7 +105,7 @@ function App(props) {
                 alignItems="center"
                 justify="center"
               >
-                <Grid id="selectVisitorTypeGridItem" item xs={12} id="greeting">
+                <Grid item xs={12} id="greeting">
                   <div className={classes.titleContainer}>
                     <div className={classes.title}>
                       <Typography
@@ -124,7 +123,7 @@ function App(props) {
                           id="user-type-select"
                           value={userType}
                           onChange={handleUserChange}
-                          className={classes.select}
+                          // className={classes.select}
                         >
                           <MenuItem value={"Employer"}>
                             <code>Employer</code>
@@ -177,4 +176,4 @@ function App(props) {
   );
 }
 
-export default withWidth()(App);
+export default App;

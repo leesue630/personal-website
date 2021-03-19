@@ -1,6 +1,9 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 
+// components
+import Headshot from "./Headshot";
+
 // MUI
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
@@ -79,6 +82,10 @@ function Contacts(props) {
             )}
           </div>
         </div>
+        <Grid container justify="center">
+
+          <Headshot userType={props.userType} height={100} desktop mobile />
+        </Grid>
       </Paper>
     </Grid>
   );

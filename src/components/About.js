@@ -65,7 +65,7 @@ function About(props) {
   return (
     <Section header="Who am I?" id="about">
       <Container maxWidth="xs">
-        <Typography variant="body1" align="center" className={classes.root}>
+        <Typography component="div" align="center" className={classes.root}>
           {bio}
         </Typography>
       </Container>

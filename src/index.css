@@ -23,3 +23,13 @@ div {
 .active {
   border-bottom: 2px solid white;
 }
+
+body {
+  cursor: url('assets/headCursor.png') 5 5, auto;
+  /* cursor: url('assets/headPointer.png'), pointer; */
+}
+
+/* a, div#user-type-select, button, #MuiChip-clickable-1160 {
+  cursor: url('assets/headPointer.png') 5 5, auto;
+  cursor: url('assets/headPointer.png'), pointer;
+} */

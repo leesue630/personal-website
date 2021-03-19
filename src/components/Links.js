@@ -23,26 +23,43 @@ function Links(props) {
       src: "https://ianmaclarty.itch.io/if-we-were-allowed-to-visit",
     },
     { text: "Oikospiel Book 1", src: "http://www.oikospiel.com/" },
-    { text: "It is as if you were doing work", src: "https://pippinbarr.github.io/itisasifyouweredoingwork/" },
+    {
+      text: "It is as if you were doing work",
+      src: "https://pippinbarr.github.io/itisasifyouweredoingwork/",
+    },
     { text: "Pink Trombone", src: "https://dood.al/pinktrombone/" },
-    { text: "You Are Jeff Bezos", src: "https://direkris.itch.io/you-are-jeff-bezos" },
+    {
+      text: "You Are Jeff Bezos",
+      src: "https://direkris.itch.io/you-are-jeff-bezos",
+    },
     { text: "WINDOWS93", src: "https://www.windows93.net/" },
-    { text: "Snowflake Generator", src: "https://viviariums.com/projects/snowflake/interactive/" },
+    {
+      text: "Snowflake Generator",
+      src: "https://viviariums.com/projects/snowflake/interactive/",
+    },
   ];
 
   const colors = [
-      "#EC6173", "#F1AE4A", "#E1DD6E", "#51A350", "#6964FF",  "#BD63BE"
-  ]
+    "#EC6173",
+    "#F1AE4A",
+    "#E1DD6E",
+    "#51A350",
+    "#6964FF",
+    "#BD63BE",
+  ];
 
   function generateLinkList(items) {
     return items.map((item, idx) => (
-      <Grid item>
+      <Grid item key={`link${idx}`}>
         <Chip
           label={item.text}
           onClick={() => window.open(item.src, "_blank")}
-          color='primary'
-
-          style={{color:"black", backgroundColor:colors[idx % colors.length]}}
+          color="primary"
+          key={`link${idx}`}
+          style={{
+            color: "black",
+            backgroundColor: colors[idx % colors.length],
+          }}
         ></Chip>
       </Grid>
     ));

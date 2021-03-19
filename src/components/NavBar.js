@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 // assets
@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  truncatedTitle: {},
   margin: {
     marginRight: theme.spacing(2),
   },
@@ -33,10 +34,22 @@ const useStyles = makeStyles((theme) => ({
 
 function NavBar(props) {
   const classes = useStyles();
+  const [width, setWidth] = React.useState(window.innerWidth);
+
+  const updateWidth = () => {
+    setWidth(window.innerWidth);
+  };
 
   function scrollToTop() {
     scroll.scrollToTop();
   }
+
+  useEffect(() => {
+    window.addEventListener("resize", updateWidth);
+    return () => {
+      window.removeEventListener("resize", updateWidth);
+    };
+  });
 
   const offset = -85;
   const duration = 400;
@@ -74,7 +87,7 @@ function NavBar(props) {
                   <code>sue;lee</code>
                 </Box>
                 <Box display={{ xs: "inline", sm: "none" }}>
-                  <code>s;l</code>
+                  {width > 450 && <code>s;l</code>}
                 </Box>
               </Link>
             </Typography>
@@ -89,7 +102,11 @@ function NavBar(props) {
               duration={duration}
             >
               <Box display={{ xs: "none", sm: "inline" }}>About</Box>
-              <Box display={{ xs: "inline", sm: "none" }}>❓</Box>
+              <Box display={{ xs: "inline", sm: "none" }}>
+                <span role="img" aria-label="Question Mark">
+                  ❓
+                </span>
+              </Box>
             </Link>
           </Button>
           <Button color="inherit">
@@ -105,7 +122,9 @@ function NavBar(props) {
                 Projects
               </Box>
               <Box component="span" display={{ xs: "inline", sm: "none" }}>
-                👩‍💻
+                <span role="img" aria-label="Female Coder">
+                  👩‍💻
+                </span>
               </Box>
             </Link>
           </Button>
@@ -122,7 +141,9 @@ function NavBar(props) {
                 Interests
               </Box>
               <Box component="span" display={{ xs: "inline", sm: "none" }}>
-                😃
+                <span role="img" aria-label="Smile">
+                  😃
+                </span>
               </Box>
             </Link>
           </Button>
@@ -139,7 +160,9 @@ function NavBar(props) {
                 Contacts
               </Box>
               <Box component="span" display={{ xs: "inline", sm: "none" }}>
-                📞
+                <span role="img" aria-label="Phone">
+                  📞
+                </span>
               </Box>
             </Link>
           </Button>
