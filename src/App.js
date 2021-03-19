@@ -87,7 +87,7 @@ function App(props) {
     default:
       greeting = "What's up, ";
       // eslint-disable-next-line
-      closing = "!✌";
+      closing = "!🤙";
       powerSource = "friendship";
   }
 
@@ -147,7 +147,7 @@ function App(props) {
                     </div>
                   </div>
                 </Grid>
-                <Headshot userType={userType} height={200} desktop />
+                <Headshot userType={userType} height={250} desktop />
                 <Headshot userType={userType} height={300} mobile />
                 <About userType={userType} />
                 <Projects userType={userType} />
@@ -155,7 +155,7 @@ function App(props) {
                 <Headshot userType={userType} height={300} desktop />
                 <Interests userType={userType} />
                 <Suewitter userType={userType} />
-                {/* <Links userType={userType} /> */}
+                <Links userType={userType} />
                 <Contacts userType={userType} />
               </Grid>
             </Container>

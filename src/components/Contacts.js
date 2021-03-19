@@ -14,13 +14,13 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(1),
   },
   root: {
-    minHeight: 200,
     padding: theme.spacing(2),
     backgroundColor: "#929292",
     // flex: '1 0 auto',
   },
   iconsContainer: {
     marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
     display: "flex",
   },
   icons: {

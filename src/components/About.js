@@ -2,10 +2,20 @@ import React from "react";
 import Section from "./Section";
 
 // MUI
+import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    marginBottom: theme.spacing(2),
+  },
+}));
+
 function About(props) {
+  const classes = useStyles();
+
   var bio;
   switch (props.userType) {
     case "Friend":
@@ -55,7 +65,7 @@ function About(props) {
   return (
     <Section header="Who am I?" id="about">
       <Container maxWidth="xs">
-        <Typography variant="body1" align="center">
+        <Typography variant="body1" align="center" className={classes.root}>
           {bio}
         </Typography>
       </Container>

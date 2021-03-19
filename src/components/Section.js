@@ -16,10 +16,10 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(3),
   },
   root: {
-    minHeight: 200,
+    // minHeight: 100,
     padding: theme.spacing(2, 4),
     backgroundColor: "#d8d8d8",
-    flex: '1 0 auto',
+    flex: "1 0 auto",
   },
 }));
 
@@ -32,7 +32,7 @@ const theme = createMuiTheme({
 function Section(props) {
   const classes = useStyles();
   return (
-    <Grid item xs={12} md={8}  id={props.id}>
+    <Grid item xs={12} md={8} id={props.id}>
       <ThemeProvider theme={theme}>
         <Paper className={classes.root}>
           <Typography variant="h4" className={classes.title} align="center">

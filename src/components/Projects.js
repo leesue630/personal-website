@@ -76,7 +76,7 @@ function Projects() {
   return (
     <Section header="👩‍💻 My Projects" id="projects">
       <Typography variant="body1" align="center">
-        Check out my projects!
+        Check out my projects! (<i>Swipe to see all</i> 👆)
       </Typography>
       <section className={classes.root}>
         {tileData.map((tile) => (
