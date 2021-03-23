@@ -58,13 +58,14 @@ function SendSueweet(props) {
   };
 
   function handlePostSueweet() {
-    if (!newSueweet.startsWith(process.env.REACT_APP_SUEWEET_STARTS_WITH)) {
+    const prefix = `${process.env.REACT_APP_SUEWEET_STARTS_WITH}: `;
+    if (!newSueweet.startsWith(prefix)) {
       setError("Sorry, but you're not Sue...🙊");
       resetChecks();
     } else {
       props
         .postSueweet(
-          newSueweet.substring(process.env.REACT_APP_SUEWEET_STARTS_WITH.length)
+          newSueweet.substring(prefix.length)
         )
         .then(() => {
           setNewSueweet("");
