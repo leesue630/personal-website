@@ -30,12 +30,12 @@ const useStyles = makeStyles((theme) => ({
 function Suewitter(props) {
   const [sueweets, setSueweets] = React.useState([]);
   const [displayCount, setDisplayCount] = React.useState(3);
+  const [getError, setGetError] = React.useState(false);
 
   function getSueweets() {
     axios
       .get(googleSheetsApiUrl)
       .then((res) => {
-        // console.log(res);
         setSueweets(
           res.data.sort(
             (a, b) => new Date(b.created_at) - new Date(a.created_at)
@@ -43,6 +43,7 @@ function Suewitter(props) {
         );
       })
       .catch((err) => {
+        setGetError(true);
         console.error(err);
       });
   }
@@ -70,8 +71,7 @@ function Suewitter(props) {
           resolve(true);
         })
         .catch((err) => {
-          console.error(err);
-          throw err;
+          reject(err);
         });
     });
   }
@@ -103,13 +103,15 @@ function Suewitter(props) {
       </ListItem>
     );
   } else {
-    displayCountControl = "";
+    displayCountControl = "Something went wrong while fetching the sueweets...😞";
   }
+
+  const GET_SUEWEETS_ERROR_TEXT = ""
 
   return (
     <Section header="🐥 Suewitter" id="suewitter">
       <List className={classes.root}>
-        {sueweets.slice(0, displayCount).map((sueweet, id) => (
+        {!getError ? sueweets.slice(0, displayCount).map((sueweet, id) => (
           <span key={"sueweetSpan" + id}>
             <Sueweet
               text={sueweet.text}
@@ -121,7 +123,7 @@ function Suewitter(props) {
               <Divider variant="inset" component="li" key={"divider" + id} />
             )}
           </span>
-        ))}
+        )) : GET_SUEWEETS_ERROR_TEXT}
         {displayCountControl}
       </List>
       <SendSueweet postSueweet={postSueweet} userType={props.userType} />

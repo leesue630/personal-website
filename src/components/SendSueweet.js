@@ -16,7 +16,7 @@ import headshotFriend from "../assets/headshotFriend.jpg";
 
 function SendSueweet(props) {
   const [newSueweet, setNewSueweet] = React.useState("");
-  const [error, setError] = React.useState(false);
+  const [error, setError] = React.useState("");
   const [currCheckLevel, setCurrCheckLevel] = React.useState(0);
   const checkboxContent = [
     "I am Sue.",
@@ -42,6 +42,7 @@ function SendSueweet(props) {
 
   function handleNewSueweet(e) {
     setNewSueweet(e.target.value);
+    setError("");
   }
 
   const handleCheck = (idx) => (e) => {
@@ -57,19 +58,27 @@ function SendSueweet(props) {
   };
 
   function handlePostSueweet() {
-    props
-      .postSueweet(newSueweet)
-      .then(() => {
-        setNewSueweet("");
-        // console.log("enter here");
-      })
-      .catch(() => {
-        setError(true);
-      });
-    resetChecks();
+    if (!newSueweet.startsWith(process.env.REACT_APP_SUEWEET_STARTS_WITH)) {
+      setError("Sorry, but you're not Sue...🙊");
+      resetChecks();
+    } else {
+      props
+        .postSueweet(
+          newSueweet.substring(process.env.REACT_APP_SUEWEET_STARTS_WITH.length)
+        )
+        .then(() => {
+          setNewSueweet("");
+          resetChecks();
+        })
+        .catch(() => {
+          setError("Something went wrong...😓");
+          resetChecks();
+        });
+    }
   }
 
   function resetChecks() {
+    setCurrCheckLevel(0);
     setCheckStates(checkStates.map((_) => false));
   }
 
@@ -123,8 +132,8 @@ function SendSueweet(props) {
           onChange={handleNewSueweet}
           fullWidth
           value={newSueweet}
-          error={error}
-          helperText={error ? "Something went wrong..." : ""}
+          error={error !== ""}
+          helperText={error !== "" ? error : ""}
         />
       </Grid>
       {checkboxContent.map((label, idx) => SueweetCheckbox(label, idx))}
