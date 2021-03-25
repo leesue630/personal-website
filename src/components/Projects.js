@@ -10,6 +10,7 @@ import pollysOh from "../assets/pollys-oh.png";
 import concertprep from "../assets/concertprep.png";
 import treesite from "../assets/treesite.png";
 import scootersignals from "../assets/scootersignals.jpg";
+import digitaldiary from "../assets/digitaldiary.png";
 
 // MUI
 import Typography from "@material-ui/core/Typography";
@@ -62,6 +63,14 @@ function Projects() {
         "🌲 A data type visualization tool to help students testing in SML.",
       website: "https://leesue630.github.io/tree-to-sml-converter/",
       github: "https://github.com/leesue630/tree-to-sml-converter",
+    },
+    {
+      name: "My Momentary Digital Diary",
+      image: digitaldiary,
+      description:
+        "✨ A relaxing, spiritual p5.js exploration that encourages carefree expression.",
+      website: "https://leesue630.github.io/digitaldiary/",
+      github: "https://github.com/leesue630/digitaldiary",
     },
     {
       name: "Scooter Turn Signals",

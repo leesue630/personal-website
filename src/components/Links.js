@@ -5,6 +5,7 @@ import Section from "./Section";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Chip from "@material-ui/core/Chip";
+import Tooltip from "@material-ui/core/Tooltip";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,6 +38,11 @@ function Links(props) {
       text: "Snowflake Generator",
       src: "https://viviariums.com/projects/snowflake/interactive/",
     },
+    {
+      text: "GutHib",
+      src: "https://guthib.com/",
+      creds: "Rita Z."
+    },
   ];
 
   const colors = [
@@ -51,16 +57,18 @@ function Links(props) {
   function generateLinkList(items) {
     return items.map((item, idx) => (
       <Grid item key={`link${idx}`}>
-        <Chip
-          label={item.text}
-          onClick={() => window.open(item.src, "_blank")}
-          color="primary"
-          key={`link${idx}`}
-          style={{
-            color: "black",
-            backgroundColor: colors[idx % colors.length],
-          }}
-        ></Chip>
+        <Tooltip title={!!item.creds ? `creds: ${item.creds}` : ""}>
+          <Chip
+            label={item.text}
+            onClick={() => window.open(item.src, "_blank")}
+            color="primary"
+            key={`link${idx}`}
+            style={{
+              color: "black",
+              backgroundColor: colors[idx % colors.length],
+            }}
+          ></Chip>
+        </Tooltip>
       </Grid>
     ));
   }
