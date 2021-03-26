@@ -22,26 +22,32 @@ function Links(props) {
     {
       text: "If we were allowed to visit",
       src: "https://ianmaclarty.itch.io/if-we-were-allowed-to-visit",
+      creds: "Paolo P.",
     },
-    { text: "Oikospiel Book 1", src: "http://www.oikospiel.com/" },
+    {
+      text: "Oikospiel Book 1",
+      src: "http://www.oikospiel.com/",
+      creds: "Paolo P.",
+    },
     {
       text: "It is as if you were doing work",
       src: "https://pippinbarr.github.io/itisasifyouweredoingwork/",
+      creds: "Paolo P."
     },
-    { text: "Pink Trombone", src: "https://dood.al/pinktrombone/" },
+    { text: "Pink Trombone", src: "https://dood.al/pinktrombone/",creds: "Paolo P." },
     {
       text: "You Are Jeff Bezos",
-      src: "https://direkris.itch.io/you-are-jeff-bezos",
+      src: "https://direkris.itch.io/you-are-jeff-bezos",creds: "Paolo P."
     },
-    { text: "WINDOWS93", src: "https://www.windows93.net/" },
+    { text: "WINDOWS93", src: "https://www.windows93.net/",creds: "Michael P." },
     {
       text: "Snowflake Generator",
-      src: "https://viviariums.com/projects/snowflake/interactive/",
+      src: "https://viviariums.com/projects/snowflake/interactive/",creds: "Paolo P."
     },
     {
       text: "GutHib",
       src: "https://guthib.com/",
-      creds: "Rita Z."
+      creds: "Rita Z.",
     },
   ];
 
