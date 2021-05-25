@@ -12,6 +12,7 @@ import Links from "./components/Links";
 
 // MUI
 import {
+  withStyles,
   makeStyles,
   createMuiTheme,
   ThemeProvider,
@@ -24,6 +25,7 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Container from "@material-ui/core/Container";
+import Tooltip from "@material-ui/core/Tooltip";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,9 +63,23 @@ const bottomTheme = createMuiTheme({
   },
 });
 
+const LightTooltip = withStyles((theme) => ({
+  arrow: {
+    color: '#ff7d6f',
+  },
+  tooltip: {
+    // backgroundColor: theme.palette.common.white,
+    backgroundColor: '#ff7d6f',
+    color: 'rgba(0, 0, 0, 0.87)',
+    boxShadow: theme.shadows[1],
+    // fontSize: 11,
+  },
+}))(Tooltip);
+
 function App(props) {
   const classes = useStyles();
   const [userType, setUserType] = React.useState("Employer");
+  const [tooltipVisible, setTooltipVisible] = React.useState(true);
 
   function handleUserChange(event) {
     setUserType(event.target.value);
@@ -118,11 +134,21 @@ function App(props) {
                       </Typography>
                       {"  "}
                       <FormControl>
+                        <LightTooltip
+                        // onClose={handleTooltipClose}
+                        open={tooltipVisible}
+                        // disableFocusListener
+                        disableHoverListener
+                        disableTouchListener
+                        title="Try me!"
+                        arrow
+                        >
                         <Select
                           labelId="user-type"
                           id="user-type-select"
                           value={userType}
                           onChange={handleUserChange}
+                          onFocus={() => setTooltipVisible(false)}
                           // className={classes.select}
                         >
                           <MenuItem value={"Employer"}>
@@ -135,6 +161,7 @@ function App(props) {
                             <code>FBI</code>
                           </MenuItem>
                         </Select>
+                        </LightTooltip>
                       </FormControl>
                       <Typography
                         variant="h5"

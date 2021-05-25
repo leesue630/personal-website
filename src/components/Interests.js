@@ -2,12 +2,12 @@ import React from "react";
 import Section from "./Section";
 
 // assets
-import sewingIcon from "../assets/sewingIcon.jpg";
-import guitarIcon from "../assets/guitarIcon.png";
-import soccerIcon from "../assets/soccerIcon.png";
-import headshotImage from "../assets/headshot.jpeg";
-import americaIcon from "../assets/americaIcon.png";
-import codeIcon from "../assets/codeIcon.png";
+import sewingIcon from "../assets/interests_icons/sewingIcon.jpg";
+import guitarIcon from "../assets/interests_icons/guitarIcon.png";
+import soccerIcon from "../assets/interests_icons/soccerIcon.png";
+import headshotImage from "../assets/headshots/headshot.jpeg";
+import americaIcon from "../assets/interests_icons/americaIcon.png";
+import codeIcon from "../assets/interests_icons/codeIcon.png";
 
 // MUI
 import { makeStyles } from "@material-ui/core/styles";

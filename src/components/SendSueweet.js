@@ -10,9 +10,9 @@ import Checkbox from "@material-ui/core/Checkbox";
 import SendIcon from "@material-ui/icons/Send";
 
 // assets
-import headshotImage from "../assets/headshot.jpeg";
-import headshotAmericaImage from "../assets/headshotAmerica.jpg";
-import headshotFriend from "../assets/headshotFriend.jpg";
+import headshotImage from "../assets/headshots/headshot.jpeg";
+import headshotAmericaImage from "../assets/headshots/headshotAmerica.jpg";
+import headshotFriend from "../assets/headshots/headshotFriend.jpg";
 
 function SendSueweet(props) {
   const [newSueweet, setNewSueweet] = React.useState("");

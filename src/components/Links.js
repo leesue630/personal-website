@@ -18,7 +18,7 @@ function Links(props) {
   const classes = useStyles();
 
   const links = [
-    { text: "Is it christmas?", src: "https://isitchristmas.com/" },
+    { text: "Is it christmas?", src: "https://isitchristmas.com/", creds: "Vsauce" },
     {
       text: "If we were allowed to visit",
       src: "https://ianmaclarty.itch.io/if-we-were-allowed-to-visit",

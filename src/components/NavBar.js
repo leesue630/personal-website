@@ -4,7 +4,7 @@ import { Link, animateScroll as scroll } from "react-scroll";
 // assets
 import logoEmployer from "../assets/logoEmployer.png";
 import logoFriend from "../assets/logo.png";
-import logoAmerica from "../assets/americaIcon.png";
+import logoAmerica from "../assets/interests_icons/americaIcon.png";
 
 // MUI
 import { makeStyles } from "@material-ui/core/styles";

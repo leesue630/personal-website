@@ -5,12 +5,13 @@ import Section from "./Section";
 import Project from "./Project";
 
 // assets
-import fruitful from "../assets/fruitful.png";
-import pollysOh from "../assets/pollys-oh.png";
-import concertprep from "../assets/concertprep.png";
-import treesite from "../assets/treesite.png";
-import scootersignals from "../assets/scootersignals.jpg";
-import digitaldiary from "../assets/digitaldiary.png";
+import fruitful from "../assets/project_images/fruitful.png";
+import pollysOh from "../assets/project_images/pollys-oh.png";
+import concertprep from "../assets/project_images/concertprep.png";
+import treesite from "../assets/project_images/treesite.png";
+import scootersignals from "../assets/project_images/scootersignals.jpg";
+import digitaldiary from "../assets/project_images/digitaldiary.png";
+import storytime_shadows from "../assets/project_images/storytime_shadows.png";
 
 // MUI
 import Typography from "@material-ui/core/Typography";
@@ -39,6 +40,13 @@ function Projects() {
         "🍊 Social media web app for individuals passionate about fruit.",
       website: "http://fruitful-convos.web.app",
       github: "https://github.com/leesue630/fruitful",
+    },
+    {
+      name: "Storytime Shadows",
+      image: storytime_shadows,
+      description:
+        "🔦 Illustrate classic fables using your very own shadow puppet characters!",
+      website: "https://oliviacannoli.itch.io/storytimeshadows",
     },
     {
       name: "Polly's OH",

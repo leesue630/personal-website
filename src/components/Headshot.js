@@ -1,9 +1,9 @@
 import React from "react";
 
 // assets
-import headshotImage from "../assets/headshot.jpeg";
-import headshotAmericaImage from "../assets/headshotAmerica.jpg";
-import headshotFriend from "../assets/headshotFriend.jpg";
+import headshotImage from "../assets/headshots/headshot.jpeg";
+import headshotAmericaImage from "../assets/headshots/headshotAmerica.jpg";
+import headshotFriend from "../assets/headshots/headshotFriend.jpg";
 
 // MUI
 import { makeStyles } from "@material-ui/styles";
