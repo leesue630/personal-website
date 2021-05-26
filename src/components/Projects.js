@@ -12,6 +12,8 @@ import treesite from "../assets/project_images/treesite.png";
 import scootersignals from "../assets/project_images/scootersignals.jpg";
 import digitaldiary from "../assets/project_images/digitaldiary.png";
 import storytime_shadows from "../assets/project_images/storytime_shadows.png";
+import bootleg_bungalow from "../assets/project_images/bootleg_bungalow.png";
+import windows_xp_deprecated from "../assets/project_images/windows_xp_deprecated.png";
 
 // MUI
 import Typography from "@material-ui/core/Typography";
@@ -35,6 +37,7 @@ function Projects() {
   const tileData = [
     {
       name: "Fruitful",
+      time: "Summer 2020",
       image: fruitful,
       description:
         "🍊 Social media web app for individuals passionate about fruit.",
@@ -43,6 +46,7 @@ function Projects() {
     },
     {
       name: "Storytime Shadows",
+      time: "Spring 2021",
       image: storytime_shadows,
       description:
         "🔦 Illustrate classic fables using your very own shadow puppet characters!",
@@ -50,6 +54,7 @@ function Projects() {
     },
     {
       name: "Polly's OH",
+      time: "Fall 2020",
       image: pollysOh,
       description:
         "🦜 A parody of cmu.ohqueue inspired by the Rubber Duck Debugging method.",
@@ -58,6 +63,7 @@ function Projects() {
     },
     {
       name: "ConcertPrep",
+      time: "Summer 2020",
       image: concertprep,
       description:
         "🎵 A lyric memorization tool using YouTube Video Player and CC.",
@@ -66,6 +72,7 @@ function Projects() {
     },
     {
       name: "Tree-to-SML Converter",
+      time: "Fall 2019",
       image: treesite,
       description:
         "🌲 A data type visualization tool to help students testing in SML.",
@@ -73,7 +80,22 @@ function Projects() {
       github: "https://github.com/leesue630/tree-to-sml-converter",
     },
     {
+      name: "Bootleg Bungalow",
+      time: "Spring 2021",
+      image: bootleg_bungalow,
+      description: "🐭 A Unity-powered Tinder for Bootleg Mickey Mouses.",
+      website: "https://sueleel.itch.io/bootleg-bungalow",
+    },
+    {
+      name: "Windows XP Deprecated",
+      time: "Spring 2021",
+      image: windows_xp_deprecated,
+      description: "🏠 A 3D Unity experience to memorialize Windows XP.",
+      website: "https://huwmessie.itch.io/windows-xp-deprecated?secret=sTXjDlFu1VcC4mzIceQrkNaMw",
+    },
+    {
       name: "My Momentary Digital Diary",
+      time: "Spring 2021",
       image: digitaldiary,
       description:
         "✨ A relaxing, spiritual p5.js exploration that encourages carefree expression.",
@@ -82,6 +104,7 @@ function Projects() {
     },
     {
       name: "Scooter Turn Signals",
+      time: "Spring 2020",
       image: scootersignals,
       description:
         "🛴 Arduino-powered turn signals for my trusty Razor Scooter.",
@@ -100,6 +123,7 @@ function Projects() {
           <div className={classes.tile} key={tile.name}>
             <Project
               name={tile.name}
+              time={tile.time}
               key={tile.name}
               image={tile.image}
               description={tile.description}

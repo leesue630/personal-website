@@ -51,10 +51,19 @@ export default function Project(props) {
             title={props.name}
           />
           <CardContent>
+            <Typography gutterBottom color="textSecondary" variant="subtitle2" component="p">
+              {props.time}
+            </Typography>
             <Typography gutterBottom variant="h5" component="h2">
               {props.name}
+              {"  "}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography
+              gutterBottom
+              variant="body2"
+              color="textSecondary"
+              component="p"
+            >
               {props.description}
             </Typography>
           </CardContent>
