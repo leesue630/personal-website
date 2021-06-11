@@ -58,7 +58,7 @@ function Projects() {
       time: "Summer 2020",
       image: personal_website,
       description:
-        "💻 This website!",
+        "💻 This website, which uses React + Material UI to share who I am with the www!",
       website: "http://suelee.netlify.app",
       github: "https://github.com/leesue630/personal-website",
     },
