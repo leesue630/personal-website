@@ -8,6 +8,7 @@ import Project from "./Project";
 import fruitful from "../assets/project_images/fruitful.png";
 import pollysOh from "../assets/project_images/pollys-oh.png";
 import concertprep from "../assets/project_images/concertprep.png";
+import personal_website from "../assets/project_images/personal_website.png";
 import treesite from "../assets/project_images/treesite.png";
 import scootersignals from "../assets/project_images/scootersignals.jpg";
 import digitaldiary from "../assets/project_images/digitaldiary.png";
@@ -51,6 +52,15 @@ function Projects() {
       description:
         "🔦 Illustrate classic fables using your very own shadow puppet characters!",
       website: "https://oliviacannoli.itch.io/storytimeshadows",
+    },
+    {
+      name: "Personal Website",
+      time: "Summer 2020",
+      image: personal_website,
+      description:
+        "💻 This website!",
+      website: "http://suelee.netlify.app",
+      github: "https://github.com/leesue630/personal-website",
     },
     {
       name: "Polly's OH",
