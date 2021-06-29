@@ -50,7 +50,7 @@ function Links(props) {
       creds: "Rita Z.",
     },
     {
-      text: "docs.new",
+      text: "Untitled Document",
       src: "https://docs.new",
       creds: "Mike L."
     }
