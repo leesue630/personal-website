@@ -49,6 +49,11 @@ function Links(props) {
       src: "https://guthib.com/",
       creds: "Rita Z.",
     },
+    {
+      text: "New Google Docs",
+      src: "docs.new",
+      creds: "Mike L."
+    }
   ];
 
   const colors = [
