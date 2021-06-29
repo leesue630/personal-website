@@ -50,8 +50,8 @@ function Links(props) {
       creds: "Rita Z.",
     },
     {
-      text: "New Google Docs",
-      src: "docs.new",
+      text: "docs.new",
+      src: "https://docs.new",
       creds: "Mike L."
     }
   ];
