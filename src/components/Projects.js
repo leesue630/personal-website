@@ -5,6 +5,7 @@ import Section from "./Section";
 import Project from "./Project";
 
 // assets
+import nail_art from "../assets/project_images/nail_art.png";
 import fruitful from "../assets/project_images/fruitful.png";
 import pollysOh from "../assets/project_images/pollys-oh.png";
 import concertprep from "../assets/project_images/concertprep.png";
@@ -61,6 +62,15 @@ function Projects() {
         "💻 This website, which uses React + Material UI to share who I am with the WWW!",
       website: "http://suelee.netlify.app",
       github: "https://github.com/leesue630/personal-website",
+    },
+    {
+      name: "Nail Art Course Instructor",
+      time: "Fall 2021",
+      image: nail_art,
+      description:
+        "💅 Co-created/taught a course about the fabulous world of nail art.",
+      website: "https://leesue630.github.io/intro-nail-art/",
+      github: "https://github.com/leesue630/intro-nail-art/tree/gh-pages",
     },
     {
       name: "Polly's OH",
