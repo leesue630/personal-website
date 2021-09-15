@@ -57,6 +57,16 @@ function Links(props) {
     {
       text: "Roots",
       src: "https://pierre-vandermaesen.itch.io/roots"
+    },
+    {
+      text: "Wave Sorter",
+      src: "https://www.youtube.com/watch?v=fRN2g5Z-hPc&t=77s",
+      creds: "Garth Z."
+    },
+    {
+      text: "Strandbeest Evolution 2020",
+      src: "https://www.youtube.com/watch?v=9_gaK2KmVcA",
+      creds: "Garth Z."
     }
   ];
 
