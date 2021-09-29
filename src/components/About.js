@@ -48,7 +48,7 @@ function About(props) {
           after <b>every ride</b> throughout school.
           <br />
           <br />I thoroughly enjoy the majestic scenes depicted by{" "}
-          <a href="https://www.purpleheart.org/wp-content/uploads/2018/11/AmericaTheBeautiful.pdf">
+          <a href="https://www.purpleheart.org/static/forms/AmericaTheBeautiful.pdf">
             "America the Beautiful"
           </a>
           .<br />
