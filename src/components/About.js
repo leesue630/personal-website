@@ -50,6 +50,7 @@ function About(props) {
           <br />I thoroughly enjoy the majestic scenes depicted by{" "}
           <a href="https://www.purpleheart.org/static/forms/AmericaTheBeautiful.pdf">
             "America the Beautiful"
+             target="_blank"
           </a>
           .<br />
           <br />I have not been hit by a meteorite and, thus,<br/><b>do not</b> yet
