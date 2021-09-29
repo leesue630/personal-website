@@ -29,7 +29,7 @@ function About(props) {
           <br />
           My favorite candy is the
           <br />
-          <b>Jolly Rancher Crunch N' Chew</b>.<i>#notspons</i>
+          <b>Jolly Rancher Crunch N' Chew</b>. <i>#notspons</i>
           <br />
           <br />A dream of mine is to learn how to <b>backflip</b>.
           <br />I don't drink bubble tea.
