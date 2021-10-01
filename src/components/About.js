@@ -65,7 +65,7 @@ function About(props) {
           <br />
           <br />
           I'm a <b>rising senior studying CS at Carnegie Mellon</b>🐶, concentrating in
-          Human-Computer Interaction, and expecting to graduate in May 2022.🎓
+          Human-Computer Interaction, and expecting to graduate in December 2021.🎓
           <br />
           <br />I am proficient in <b>C#/Java and HTML/CSS/JavaScript</b> (and
           can reverse a linked list in O(1) space).😉
