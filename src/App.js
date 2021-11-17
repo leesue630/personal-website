@@ -183,7 +183,7 @@ function App(props) {
                 <Interests userType={userType} />
                 <Suewitter userType={userType} />
                 <Links userType={userType} />
-                <Spotify />
+                <Spotify userType={userType} />
                 <Contacts userType={userType} />
               </Grid>
             </Container>
