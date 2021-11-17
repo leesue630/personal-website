@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import Interests from "./components/Interests";
 import Suewitter from "./components/Suewitter";
 import Links from "./components/Links";
+import Spotify from "./components/Spotify";
 
 // MUI
 import {
@@ -182,6 +183,7 @@ function App(props) {
                 <Interests userType={userType} />
                 <Suewitter userType={userType} />
                 <Links userType={userType} />
+                <Spotify />
                 <Contacts userType={userType} />
               </Grid>
             </Container>
