@@ -16,6 +16,7 @@ import digitaldiary from "../assets/project_images/digitaldiary.png";
 import storytime_shadows from "../assets/project_images/storytime_shadows.png";
 import bootleg_bungalow from "../assets/project_images/bootleg_bungalow.png";
 import windows_xp_deprecated from "../assets/project_images/windows_xp_deprecated.png";
+import scarecase from "../assets/project_images/scarecase.jpg";
 
 // MUI
 import Typography from "@material-ui/core/Typography";
@@ -53,6 +54,14 @@ function Projects() {
       description:
         "🔦 Illustrate classic fables using your very own shadow puppet characters!",
       website: "https://oliviacannoli.itch.io/storytimeshadows",
+    },
+    {
+      name: "The Scare-case",
+      time: "Fall 2021",
+      image: scarecase,
+      description:
+        "👻 A travel-size version of the Fridge Scare, powered by Raspberry Pi!",
+      website: "https://courses.ideate.cmu.edu/16-375/f2021/work/2021/12/01/scare-case-final/",
     },
     {
       name: "Personal Website",
