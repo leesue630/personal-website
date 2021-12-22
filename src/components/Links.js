@@ -67,6 +67,10 @@ function Links(props) {
       text: "Strandbeest Evolution 2020",
       src: "https://www.youtube.com/watch?v=9_gaK2KmVcA",
       creds: "Garth Z."
+    },
+    {
+      text: "Calmly Writer",
+      src: "https://www.calmlywriter.com/online/"
     }
   ];
 
