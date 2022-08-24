@@ -16,8 +16,11 @@ import Link from "@material-ui/core/Link";
 // packages
 import axios from "axios";
 
-const googleSheetsApiUrl =
+const cmuGoogleSheetsApiUrl =
   "https://sheet.best/api/sheets/c8c77182-7a89-4bc9-953c-df80614279c2";
+
+const mainGoogleSheetsApiUrl =
+  "https://sheet.best/api/sheets/73adfbfa-3424-499b-8e01-4675f078dafd";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,7 +37,7 @@ function Suewitter(props) {
 
   function getSueweets() {
     axios
-      .get(googleSheetsApiUrl)
+      .get(mainGoogleSheetsApiUrl)
       .then((res) => {
         setSueweets(
           res.data.sort(
@@ -42,9 +45,20 @@ function Suewitter(props) {
           )
         );
       })
-      .catch((err) => {
-        setGetError(true);
-        console.error(err);
+      .catch(() => {
+        axios
+          .get(cmuGoogleSheetsApiUrl)
+          .then((res) => {
+            setSueweets(
+              res.data.sort(
+                (a, b) => new Date(b.created_at) - new Date(a.created_at)
+              )
+            );
+          })
+          .catch((err) => {
+            setGetError(true);
+            console.error(err);
+          });
       });
   }
 

@@ -65,9 +65,9 @@ function Contacts(props) {
                 <IconButton aria-label="github">
                   <SocialIcon url="https://www.github.com/leesue630/" />
                 </IconButton>
-                <IconButton aria-label="email">
+                {/* <IconButton aria-label="email">
                   <SocialIcon url="mailto:suel2@andrew.cmu.edu" />
-                </IconButton>
+                </IconButton> */}
               </div>
             )}
             {props.userType === "Friend" && (

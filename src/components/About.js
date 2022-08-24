@@ -32,7 +32,7 @@ function About(props) {
           <b>Jolly Rancher Crunch N' Chew</b>. <i>#notspons</i>
           <br />
           <br />A dream of mine is to learn how to <b>backflip</b>.
-          <br />I don't drink bubble tea.
+          <br />I am okay with drinking bubble tea.
         </div>
       );
       break;
@@ -64,8 +64,7 @@ function About(props) {
           the fast-paced field of computer science.
           <br />
           <br />
-          I'm a <b>rising senior studying CS at Carnegie Mellon</b>🐶, concentrating in
-          Human-Computer Interaction, and expecting to graduate in December 2021.🎓
+          I graduated from <b>Carnegie Mellon University</b>🐶 with a Bachelor's in CS in December 2021.🎓
           <br />
           <br />I am proficient in <b>C#/Java and HTML/CSS/JavaScript</b> (and
           can reverse a linked list in O(1) space).😉
