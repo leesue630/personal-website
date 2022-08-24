@@ -16,11 +16,9 @@ import Link from "@material-ui/core/Link";
 // packages
 import axios from "axios";
 
-const cmuGoogleSheetsApiUrl =
-  "https://sheet.best/api/sheets/c8c77182-7a89-4bc9-953c-df80614279c2";
+const cmuGoogleSheetsApiUrl = process.env.REACT_APP_SUEWITTER_CMU_API_URL;
 
-const mainGoogleSheetsApiUrl =
-  "https://sheet.best/api/sheets/73adfbfa-3424-499b-8e01-4675f078dafd";
+const mainGoogleSheetsApiUrl = process.env.REACT_APP_SUEWITTER_API_URL;
 
 const useStyles = makeStyles((theme) => ({
   root: {
