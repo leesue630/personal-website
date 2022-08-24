@@ -75,7 +75,7 @@ function Suewitter(props) {
   function postSueweet(newSueweet) {
     return new Promise((resolve, reject) => {
       axios
-        .post(googleSheetsApiUrl, {
+        .post(mainGoogleSheetsApiUrl, {
           text: newSueweet,
           created_at: new Date().toString(),
         })
