@@ -16,8 +16,6 @@ import Link from "@material-ui/core/Link";
 // packages
 import axios from "axios";
 
-const cmuGoogleSheetsApiUrl = process.env.REACT_APP_SUEWITTER_CMU_API_URL;
-
 const mainGoogleSheetsApiUrl = process.env.REACT_APP_SUEWITTER_API_URL;
 
 const useStyles = makeStyles((theme) => ({
@@ -43,20 +41,9 @@ function Suewitter(props) {
           )
         );
       })
-      .catch(() => {
-        axios
-          .get(cmuGoogleSheetsApiUrl)
-          .then((res) => {
-            setSueweets(
-              res.data.sort(
-                (a, b) => new Date(b.created_at) - new Date(a.created_at)
-              )
-            );
-          })
-          .catch((err) => {
-            setGetError(true);
-            console.error(err);
-          });
+      .catch((err) => {
+          setGetError(true);
+          console.error(err);
       });
   }
 
