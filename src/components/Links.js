@@ -71,6 +71,10 @@ function Links(props) {
     {
       text: "Calmly Writer",
       src: "https://www.calmlywriter.com/online/"
+    },
+    {
+      text: "Kanye 2049",
+      src: "https://www.kanye2049.com/"
     }
   ];
 
